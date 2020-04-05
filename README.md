@@ -6,9 +6,16 @@ the effect of interventions or to compare interventions across different populat
 It is meant to be immediately helpful for healthcare workers and policy makers.
 It is sourced from public reports by federal, provincial, territorial, and regional governments as well as accredited news media.
 
-## Access
+
+
+## Access and Details
 
 The dataset and codebook can be found at https://docs.google.com/spreadsheets/d/16jZ8tdPS9x8kRHAi5CRh8iKfDshg0AMbfFLJ9ysgV9U/edit?usp=sharing
+
+Some important details:
+**Geography:** Province of Ontario (to be expanded)
+**Time Period:** January 1, 2020 to March 31, 2020.
+**Sources:** https://news.ontario.ca/ and https://cbc.ca
 
 ## Methods
 
@@ -25,5 +32,5 @@ This is a project from the [#howsmyflattening](https://howsmyflattening.ca/#/hom
 Name | Organization | Email | Twitter
 --- | --- | --- | ---
 Jonathan Smith | Layer 6  | jonathan@layer6.ai | [@jonathanajsmith](https://twitter.com/jonathanajsmith)
-Liam McCoy | MD Student | liamgmccoy@gmail.com | [@liamgmccoy](https://twitter.com/LiamGMcCoy)
+Liam McCoy | U of T MD + MSc Student | liamgmccoy@gmail.com | [@liamgmccoy](https://twitter.com/LiamGMcCoy)
 
