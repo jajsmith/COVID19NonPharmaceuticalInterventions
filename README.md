@@ -13,8 +13,11 @@ It is sourced from public reports by federal, provincial, territorial, and regio
 The dataset and codebook can be found at https://docs.google.com/spreadsheets/d/16jZ8tdPS9x8kRHAi5CRh8iKfDshg0AMbfFLJ9ysgV9U/edit?usp=sharing
 
 Some important details:
+
 **Geography:** Province of Ontario (to be expanded)
+
 **Time Period:** January 1, 2020 to March 31, 2020.
+
 **Sources:** https://news.ontario.ca/ and https://cbc.ca
 
 ## Methods
