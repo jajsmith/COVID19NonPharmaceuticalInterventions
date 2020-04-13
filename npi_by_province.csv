@@ -14839,12 +14839,12 @@ Quick Facts:
 in December 2019, cases of pneumonia were reported in Wuhan, China, caused by a new virus that had not been seen in humans. The illness was caused by the novel coronavirus (SARS-CoV-2) and is called COVID-19
 Nova Scotia launched a website dedicated to the latest information about the coronavirus in January
 the Government of Canada has set up a novel coronavirus information line at 1-833-784-4397",
-1,2020-03-04,2020-04-30,Canada,Nova Scotia,,Cancelling international school trips,Public Announcement,School Students,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200304005,,,Government Website,School Organized Trips to International Destinations Cancelled,"Today, March 4, Nova Scotia’s Regional Centres for Education collectively decided to cancel all school organized student trips to international destinations until April 30. This includes all school organized trips to international destinations scheduled for March Break.
+1,2020-03-04,2020-04-30,Canada,Nova Scotia,,Cancelling international school trips,Public Announcement,School Students,Not Applicable,S7 International travel controls,,,0.0,,,,,,https://novascotia.ca/news/release/?id=20200304005,,,Government Website,School Organized Trips to International Destinations Cancelled,"Today, March 4, Nova Scotia’s Regional Centres for Education collectively decided to cancel all school organized student trips to international destinations until April 30. This includes all school organized trips to international destinations scheduled for March Break.
 
 This was a difficult decision that was not made lightly. The situation involving COVID-19 continues to evolve and the regions made the decision, based on discussions with Dr. Robert Strang, Nova Scotia’s chief medical officer of health, to adopt a low-risk approach for students and chaperones. I fully support this direction.
 
 For families and students who were planning to go on a school-sanctioned trip, trip planners and/or school principals will now be communicating directly with families.",
-2,2020-03-06,,Canada,Nova Scotia,,Update on health system preparations,Public Reassurance,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200306003,,,Government Website,Coronavirus preparations well underway,"Nova Scotia’s health-care system is actively monitoring and testing for potential cases of the novel coronavirus (COVID-19).
+2,2020-03-06,,Canada,Nova Scotia,,Update on health system preparations,Public Reassurance,General,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200306003,,,Government Website,Coronavirus preparations well underway,"Nova Scotia’s health-care system is actively monitoring and testing for potential cases of the novel coronavirus (COVID-19).
 
 Health officials provided an update on the preparations underway across the health system as the number of cases in Canada continues to increase. To date, there have been no cases of COVID-19 in Nova Scotia and the risk to Nova Scotians remains low at this time.
 
@@ -14857,7 +14857,7 @@ establishing working groups focused on disease surveillance, health system impac
 working with Nova Scotia’s Emergency Management Office and other non-health partners on business continuity planning
 sharing accurate, up-to-date information with our partners and Nova Scotians
 Nova Scotians can find accurate, up-to-date information, handwashing posters and fact sheets at https://novascotia.ca/coronavirus/ .",
-3,2020-03-09,,Canada,Nova Scotia,,"Monitor health 14 days after international travel, don't visit LTC if symptomatic, practice proper hygiene protocols",Self-monitored quarantine,Returning Travellers,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200309002,,,Government Website,New National Screening Protocols for COVID-19,"\New national screening protocols have been established as the novel coronavirus (COVID-19) continues to expand globally.
+3,2020-03-09,,Canada,Nova Scotia,,"Monitor health 14 days after international travel, don't visit LTC if symptomatic, practice proper hygiene protocols",Self-monitored quarantine,Returning Travellers,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200309002,,,Government Website,New National Screening Protocols for COVID-19,"\New national screening protocols have been established as the novel coronavirus (COVID-19) continues to expand globally.
 
 Anyone who has travelled outside Canada may have come in contact with the novel coronavirus and should closely monitor their health for 14 days after returning to the country. Travellers who start to feel unwell, should stay at home/self-isolate away from the public. Individuals who develop a fever, with a temperature 38°C or higher, and/or cough should call 811 for assessment.
 
@@ -14874,7 +14874,7 @@ minimize close face-to-face contact with people who appear ill
 stay away from others if you feel unwell
 regularly clean and disinfect high touch surfaces
 Nova Scotians can find accurate, up-to-date information at: https://novascotia.ca/coronavirus .",
-4,2020-03-13,,Canada,Nova Scotia,,"Mandatory self-isolation for public sector employees who have recently travelled, recommended to private sector as well",Recommended self-isolation,Returning Travellers,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200313002,,,Government Website,New Travel Measures for Nova Scotia Public Sector Employees,"Public sector employees who travel outside of Canada, including the United States, will be required to self-isolate upon their return. Government introduced the travel protocols today, March 13, to reduce the spread of the novel coronavirus (COVID-19) in the province.
+4,2020-03-13,,Canada,Nova Scotia,,"Mandatory self-isolation for public sector employees who have recently travelled, recommended to private sector as well",Recommended self-isolation,Returning Travellers,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200313002,,,Government Website,New Travel Measures for Nova Scotia Public Sector Employees,"Public sector employees who travel outside of Canada, including the United States, will be required to self-isolate upon their return. Government introduced the travel protocols today, March 13, to reduce the spread of the novel coronavirus (COVID-19) in the province.
 
 To date, there are no confirmed cases of COVID-19 in Nova Scotia.
 
@@ -14899,7 +14899,7 @@ travel advice from the Public Health Agency of Canada says anyone who travels to
 Nova Scotia’s Health Protection Act gives the chief medical officer of health the authority to give advice to protect public health and decrease risk to public health presented by communicable diseases such as COVID-19
 the EMO Provincial Coordination Centre is activating at the monitoring level to help track the situation locally and globally and provide planning support and information to municipal partners and others
 the 811 system is screening for COVID-19; there is also a self-assessment tool available on the 811 website",
-5,2020-03-13,,Canada,Nova Scotia,,"recommended to avoid public gatherings over 150 people, trying to delay start of cruise ship season",Public event size restriction (<=250),General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200313002,,,Government Website,New Travel Measures for Nova Scotia Public Sector Employees,"""Public sector employees who travel outside of Canada, including the United States, will be required to self-isolate upon their return. Government introduced the travel protocols today, March 13, to reduce the spread of the novel coronavirus (COVID-19) in the province.
+5,2020-03-13,,Canada,Nova Scotia,,"recommended to avoid public gatherings over 150 people, trying to delay start of cruise ship season",Public event size restriction (<=250),General,Not Applicable,S3 Cancel public events,1.0,,,1.0,,,,,https://novascotia.ca/news/release/?id=20200313002,,,Government Website,New Travel Measures for Nova Scotia Public Sector Employees,"""Public sector employees who travel outside of Canada, including the United States, will be required to self-isolate upon their return. Government introduced the travel protocols today, March 13, to reduce the spread of the novel coronavirus (COVID-19) in the province.
 
 To date, there are no confirmed cases of COVID-19 in Nova Scotia.
 
@@ -14924,14 +14924,14 @@ travel advice from the Public Health Agency of Canada says anyone who travels to
 Nova Scotia’s Health Protection Act gives the chief medical officer of health the authority to give advice to protect public health and decrease risk to public health presented by communicable diseases such as COVID-19
 the EMO Provincial Coordination Centre is activating at the monitoring level to help track the situation locally and globally and provide planning support and information to municipal partners and others
 the 811 system is screening for COVID-19; there is also a self-assessment tool available on the 811 website""",
-6,2020-03-13,,Canada,Nova Scotia,,Museum sites and Art Gallery of Nova Scotia will be closed to public,Tourism site restrictions,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200313009,,,Government Website,"Nova Scotia Museum Sites, Art Gallery of Nova Scotia Closed","Given the concern of COVID-19 and the recent guidance from public health officials, all Nova Scotia Museum sites and the Art Gallery of Nova Scotia in Halifax will close to the public today, March 13, until further notice.
+6,2020-03-13,,Canada,Nova Scotia,,Museum sites and Art Gallery of Nova Scotia will be closed to public,Tourism site restrictions,General,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200313009,,,Government Website,"Nova Scotia Museum Sites, Art Gallery of Nova Scotia Closed","Given the concern of COVID-19 and the recent guidance from public health officials, all Nova Scotia Museum sites and the Art Gallery of Nova Scotia in Halifax will close to the public today, March 13, until further notice.
 
 This includes Maritime Museum of the Atlantic and Museum of Natural History in Halifax, Museum of Industry in Stellarton, Ross Farm Museum in New Ross, Fundy Geological Museum in Parrsboro, Firefighters Museum in Yarmouth and Black Loyalist Heritage Centre in Birchtown, Shelburne Co.
 
 They will reopen when appropriate.
 ",
-7,2020-03-14,,Canada,Nova Scotia,,Shubenacodie Wildlife Park will be closed to public from 15-03-2020 to TBD,Public park closure,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200314001,,,Government Website,Shubenacadie Wildlife Park to Close,"Given the concern of COVID-19 and recent guidance from public health officials, the Shubenacadie Wildlife Park will close to the public Sunday, March 15, until further notice. It will reopen when appropriate.",
-8,2020-03-14,,Canada,Nova Scotia,,"Correctional facilities will be closed to volunteer groups, limit family and friend vists to non-contact visits, lawyer visit protocols have not changed",Correctional facility restrictions,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200314002,,,Government Website,Changes to Correctional Facilities Visits to Prevent COVID-19,"In the interest of the health and safety of inmates, their families, Correctional Services staff and the public, Nova Scotia’s correctional facilities will be closed to volunteer organizations until further notice, effective immediately.
+7,2020-03-14,,Canada,Nova Scotia,,Shubenacodie Wildlife Park will be closed to public from 15-03-2020 to TBD,Public park closure,General,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200314001,,,Government Website,Shubenacadie Wildlife Park to Close,"Given the concern of COVID-19 and recent guidance from public health officials, the Shubenacadie Wildlife Park will close to the public Sunday, March 15, until further notice. It will reopen when appropriate.",
+8,2020-03-14,,Canada,Nova Scotia,,"Correctional facilities will be closed to volunteer groups, limit family and friend vists to non-contact visits, lawyer visit protocols have not changed",Correctional facility restrictions,General,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200314002,,,Government Website,Changes to Correctional Facilities Visits to Prevent COVID-19,"In the interest of the health and safety of inmates, their families, Correctional Services staff and the public, Nova Scotia’s correctional facilities will be closed to volunteer organizations until further notice, effective immediately.
 
 Family and friend visits to inmates will also be restricted to non-contact visits effective immediately. Non-contact visits mean that an inmate and the person visiting are separated by a glass partition and use a phone system to talk to one another.
 
@@ -14942,12 +14942,12 @@ These public health safety measures apply to the Nova Scotia Youth Centre in Wat
 There are no changes, at this time, to the protocols for visits by lawyers.
 
 These safety measures are being made with the guidance of public health officials and will be reassessed on a daily basis. Nova Scotia Correctional Services works closely with public health officials to ensure plans are in place at all times to mitigate the spread of any contagious virus or disease in the province’s correctional facilities.",
-9,2020-03-14,,Canada,Nova Scotia,,"Closing visitor information centres located at airports, Tourism office staff will work from home, tourism contact centre's 1-800 line will be redirected to appropriate websites",Tourism site restrictions,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200315001,,,Government Website,Provincial Visitor Information Centres to Close Until Further Notice,"Given the concern of COVID-19 and recent guidance from public health officials, visitor information centres that are open year-round at Amherst and Halifax Stanfield International Airport will be closed effective Tuesday, March 17, until further notice.
+9,2020-03-14,,Canada,Nova Scotia,,"Closing visitor information centres located at airports, Tourism office staff will work from home, tourism contact centre's 1-800 line will be redirected to appropriate websites",Tourism site restrictions,General,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200315001,,,Government Website,Provincial Visitor Information Centres to Close Until Further Notice,"Given the concern of COVID-19 and recent guidance from public health officials, visitor information centres that are open year-round at Amherst and Halifax Stanfield International Airport will be closed effective Tuesday, March 17, until further notice.
 
 As an additional precaution, Tourism Nova Scotia office staff will work from home.
 
 The tourism contact centre, which handles calls from travellers seeking trip planning information, will also be closed until further notice. Anyone who calls the 1-800 line or stops at a visitor information centre will be directed to the government of Nova Scotia’s website for detailed information on COVID-19, as well as NovaScotia.com for travel information and updates. Operations will resume to normal when appropriate.",
-10,2020-03-15,,Canada,Nova Scotia,,Announcing first 3 cases - travel related,First case announcement,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200315002,,,Government Website,First Presumptive Cases of COVID-19 in Nova Scotia; New Prevention Measures,"Nova Scotia announced the province’s first three presumptive cases of novel coronavirus (COVID-19), today, March 15. The province is also taking further measures to reduce the spread of COVID-19.
+10,2020-03-15,,Canada,Nova Scotia,,Announcing first 3 cases - travel related,First case announcement,General,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200315002,,,Government Website,First Presumptive Cases of COVID-19 in Nova Scotia; New Prevention Measures,"Nova Scotia announced the province’s first three presumptive cases of novel coronavirus (COVID-19), today, March 15. The province is also taking further measures to reduce the spread of COVID-19.
 
 The cases are not connected and are travel related. The individuals followed all the proper procedures when they started to feel unwell.
 
@@ -14969,7 +14969,7 @@ organizations and businesses must practise social distancing of two metres or si
 Starting Monday, March 16, public health inspectors will be onsite at the Halifax International Airport and the J.A. Douglas McCurdy Sydney Airport. Work is ongoing with federal partners responsible for border security to strengthen the screening process. As well, both airports now have information on digital screens in all areas frequented by travellers.
 
 ",
-11,2020-03-15,,Canada,Nova Scotia,,Closing LTC to visitors immediately,Healthcare facility restrictions,Adults in Longterm Care Facilities,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200315002,,,Government Website,First Presumptive Cases of COVID-19 in Nova Scotia; New Prevention Measures,"""Nova Scotia announced the province’s first three presumptive cases of novel coronavirus (COVID-19), today, March 15. The province is also taking further measures to reduce the spread of COVID-19.
+11,2020-03-15,,Canada,Nova Scotia,,Closing LTC to visitors immediately,Healthcare facility restrictions,Adults in Longterm Care Facilities,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200315002,,,Government Website,First Presumptive Cases of COVID-19 in Nova Scotia; New Prevention Measures,"""Nova Scotia announced the province’s first three presumptive cases of novel coronavirus (COVID-19), today, March 15. The province is also taking further measures to reduce the spread of COVID-19.
 
 The cases are not connected and are travel related. The individuals followed all the proper procedures when they started to feel unwell.
 
@@ -14991,7 +14991,7 @@ organizations and businesses must practise social distancing of two metres or si
 Starting Monday, March 16, public health inspectors will be onsite at the Halifax International Airport and the J.A. Douglas McCurdy Sydney Airport. Work is ongoing with federal partners responsible for border security to strengthen the screening process. As well, both airports now have information on digital screens in all areas frequented by travellers.
 
 """,
-12,2020-03-15,,Canada,Nova Scotia,,Closing public schools for 2 weeks after March Break,School closure,School Students,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200315002,,,Government Website,First Presumptive Cases of COVID-19 in Nova Scotia; New Prevention Measures,"""""""Nova Scotia announced the province’s first three presumptive cases of novel coronavirus (COVID-19), today, March 15. The province is also taking further measures to reduce the spread of COVID-19.
+12,2020-03-15,,Canada,Nova Scotia,,Closing public schools for 2 weeks after March Break,School closure,School Students,Not Applicable,S1 School Closing,2.0,,,1.0,,,,,https://novascotia.ca/news/release/?id=20200315002,,,Government Website,First Presumptive Cases of COVID-19 in Nova Scotia; New Prevention Measures,"Nova Scotia announced the province’s first three presumptive cases of novel coronavirus (COVID-19), today, March 15. The province is also taking further measures to reduce the spread of COVID-19.
 
 The cases are not connected and are travel related. The individuals followed all the proper procedures when they started to feel unwell.
 
@@ -15013,7 +15013,7 @@ organizations and businesses must practise social distancing of two metres or si
 Starting Monday, March 16, public health inspectors will be onsite at the Halifax International Airport and the J.A. Douglas McCurdy Sydney Airport. Work is ongoing with federal partners responsible for border security to strengthen the screening process. As well, both airports now have information on digital screens in all areas frequented by travellers.
 
 """"""",
-13,2020-03-17,2020-03-04,Canada,Nova Scotia,,"Child care centres closed from March 17-April 3, March Break camps cancelled",Non-essential workplace closure,School Students,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200315002,,,Government Website,First Presumptive Cases of COVID-19 in Nova Scotia; New Prevention Measures,"""""""""""""""Nova Scotia announced the province’s first three presumptive cases of novel coronavirus (COVID-19), today, March 15. The province is also taking further measures to reduce the spread of COVID-19.
+13,2020-03-17,2020-03-04,Canada,Nova Scotia,,"Child care centres closed from March 17-April 3, March Break camps cancelled",Non-essential workplace closure,School Students,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200315002,,,Government Website,First Presumptive Cases of COVID-19 in Nova Scotia; New Prevention Measures,"Nova Scotia announced the province’s first three presumptive cases of novel coronavirus (COVID-19), today, March 15. The province is also taking further measures to reduce the spread of COVID-19.
 
 The cases are not connected and are travel related. The individuals followed all the proper procedures when they started to feel unwell.
 
@@ -15035,7 +15035,7 @@ organizations and businesses must practise social distancing of two metres or si
 Starting Monday, March 16, public health inspectors will be onsite at the Halifax International Airport and the J.A. Douglas McCurdy Sydney Airport. Work is ongoing with federal partners responsible for border security to strengthen the screening process. As well, both airports now have information on digital screens in all areas frequented by travellers.
 
 """"""""""""""",
-14,2020-03-16,,Canada,Nova Scotia,,Casinos in Halifax and Sydney closed March 16 at 12 am,Non-essential workplace closure,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200315002,,,Government Website,First Presumptive Cases of COVID-19 in Nova Scotia; New Prevention Measures,"""""""""""""""""""""""""""""""Nova Scotia announced the province’s first three presumptive cases of novel coronavirus (COVID-19), today, March 15. The province is also taking further measures to reduce the spread of COVID-19.
+14,2020-03-16,,Canada,Nova Scotia,,Casinos in Halifax and Sydney closed March 16 at 12 am,Non-essential workplace closure,General,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200315002,,,Government Website,First Presumptive Cases of COVID-19 in Nova Scotia; New Prevention Measures,"Nova Scotia announced the province’s first three presumptive cases of novel coronavirus (COVID-19), today, March 15. The province is also taking further measures to reduce the spread of COVID-19.
 
 The cases are not connected and are travel related. The individuals followed all the proper procedures when they started to feel unwell.
 
@@ -15057,7 +15057,7 @@ organizations and businesses must practise social distancing of two metres or si
 Starting Monday, March 16, public health inspectors will be onsite at the Halifax International Airport and the J.A. Douglas McCurdy Sydney Airport. Work is ongoing with federal partners responsible for border security to strengthen the screening process. As well, both airports now have information on digital screens in all areas frequented by travellers.
 
 """"""""""""""""""""""""""""""",
-15,2020-03-15,,Canada,Nova Scotia,,"International travellers must self-isolate, even if asymptomatic",Recommended self-isolation,Returning Travellers,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200315002,,,Government Website,First Presumptive Cases of COVID-19 in Nova Scotia; New Prevention Measures,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""Nova Scotia announced the province’s first three presumptive cases of novel coronavirus (COVID-19), today, March 15. The province is also taking further measures to reduce the spread of COVID-19.
+15,2020-03-15,,Canada,Nova Scotia,,"International travellers must self-isolate, even if asymptomatic",Recommended self-isolation,Returning Travellers,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200315002,,,Government Website,First Presumptive Cases of COVID-19 in Nova Scotia; New Prevention Measures,"Nova Scotia announced the province’s first three presumptive cases of novel coronavirus (COVID-19), today, March 15. The province is also taking further measures to reduce the spread of COVID-19.
 
 The cases are not connected and are travel related. The individuals followed all the proper procedures when they started to feel unwell.
 
@@ -15079,7 +15079,7 @@ organizations and businesses must practise social distancing of two metres or si
 Starting Monday, March 16, public health inspectors will be onsite at the Halifax International Airport and the J.A. Douglas McCurdy Sydney Airport. Work is ongoing with federal partners responsible for border security to strengthen the screening process. As well, both airports now have information on digital screens in all areas frequented by travellers.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""",
-16,2020-03-15,,Canada,Nova Scotia,,Orgs and businesses must practice social distancing of 2m/6ft,Social Distancing Announcement,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200315002,,,Government Website,First Presumptive Cases of COVID-19 in Nova Scotia; New Prevention Measures,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""Nova Scotia announced the province’s first three presumptive cases of novel coronavirus (COVID-19), today, March 15. The province is also taking further measures to reduce the spread of COVID-19.
+16,2020-03-15,,Canada,Nova Scotia,,Orgs and businesses must practice social distancing of 2m/6ft,Social Distancing Announcement,General,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200315002,,,Government Website,First Presumptive Cases of COVID-19 in Nova Scotia; New Prevention Measures,"Nova Scotia announced the province’s first three presumptive cases of novel coronavirus (COVID-19), today, March 15. The province is also taking further measures to reduce the spread of COVID-19.
 
 The cases are not connected and are travel related. The individuals followed all the proper procedures when they started to feel unwell.
 
@@ -15101,7 +15101,7 @@ organizations and businesses must practise social distancing of two metres or si
 Starting Monday, March 16, public health inspectors will be onsite at the Halifax International Airport and the J.A. Douglas McCurdy Sydney Airport. Work is ongoing with federal partners responsible for border security to strengthen the screening process. As well, both airports now have information on digital screens in all areas frequented by travellers.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""",
-17,2020-03-15,,Canada,Nova Scotia,,Orgs and businesses must keep gatherings below 150 if possible,Public event size restriction (<=250),General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200315002,,,Government Website,First Presumptive Cases of COVID-19 in Nova Scotia; New Prevention Measures,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""Nova Scotia announced the province’s first three presumptive cases of novel coronavirus (COVID-19), today, March 15. The province is also taking further measures to reduce the spread of COVID-19.
+17,2020-03-15,,Canada,Nova Scotia,,Orgs and businesses must keep gatherings below 150 if possible,Public event size restriction (<=250),General,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200315002,,,Government Website,First Presumptive Cases of COVID-19 in Nova Scotia; New Prevention Measures,"Nova Scotia announced the province’s first three presumptive cases of novel coronavirus (COVID-19), today, March 15. The province is also taking further measures to reduce the spread of COVID-19.
 
 The cases are not connected and are travel related. The individuals followed all the proper procedures when they started to feel unwell.
 
@@ -15123,7 +15123,7 @@ organizations and businesses must practise social distancing of two metres or si
 Starting Monday, March 16, public health inspectors will be onsite at the Halifax International Airport and the J.A. Douglas McCurdy Sydney Airport. Work is ongoing with federal partners responsible for border security to strengthen the screening process. As well, both airports now have information on digital screens in all areas frequented by travellers.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""",
-18,2020-03-16,,Canada,Nova Scotia,,Public Health Inspectors at international airports,Symptom screening,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200315002,,,Government Website,First Presumptive Cases of COVID-19 in Nova Scotia; New Prevention Measures,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""Nova Scotia announced the province’s first three presumptive cases of novel coronavirus (COVID-19), today, March 15. The province is also taking further measures to reduce the spread of COVID-19.
+18,2020-03-16,,Canada,Nova Scotia,,Public Health Inspectors at international airports,Symptom screening,General,Not Applicable,S7 International travel controls,,,1.0,,,,,,https://novascotia.ca/news/release/?id=20200315002,,,Government Website,First Presumptive Cases of COVID-19 in Nova Scotia; New Prevention Measures,"Nova Scotia announced the province’s first three presumptive cases of novel coronavirus (COVID-19), today, March 15. The province is also taking further measures to reduce the spread of COVID-19.
 
 The cases are not connected and are travel related. The individuals followed all the proper procedures when they started to feel unwell.
 
@@ -15145,7 +15145,7 @@ organizations and businesses must practise social distancing of two metres or si
 Starting Monday, March 16, public health inspectors will be onsite at the Halifax International Airport and the J.A. Douglas McCurdy Sydney Airport. Work is ongoing with federal partners responsible for border security to strengthen the screening process. As well, both airports now have information on digital screens in all areas frequented by travellers.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""",
-19,2020-03-16,,Canada,Nova Scotia,,Restrict all visits to correctional facilities,Correctional facility restrictions,Incarcerated Adults,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200315004,,,Government Website,All Visits to Correctional Facilities Suspended to Prevent COVID-19,"In the interest of the health and safety of inmates, their families, Correctional Services staff and the public, Nova Scotia’s correctional facilities will be closed to all visitors until further notice, effective immediately.
+19,2020-03-16,,Canada,Nova Scotia,,Restrict all visits to correctional facilities,Correctional facility restrictions,Incarcerated Adults,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200315004,,,Government Website,All Visits to Correctional Facilities Suspended to Prevent COVID-19,"In the interest of the health and safety of inmates, their families, Correctional Services staff and the public, Nova Scotia’s correctional facilities will be closed to all visitors until further notice, effective immediately.
 
 Lawyers who need to speak with their clients, who are in custody in correctional facilities, should contact the facility after noon on Monday, March 16, to arrange alternative methods of communication.
 
@@ -15154,7 +15154,7 @@ During this time, inmates will be able to make extra phone calls.
 These public health safety measures apply to the Nova Scotia Youth Centre in Waterville, and the province’s four adult correctional facilities: the Cape Breton Correctional Facility in Sydney; the Central Nova Correctional Facility in Dartmouth; the Northeast Nova Scotia Correctional Facility in Priestville, Pictou Co. and the Southwest Nova Scotia Correctional Facility in Yarmouth.
 
 These safety measures are being made with the guidance of public health officials and will be reassessed on a daily basis. Nova Scotia Correctional Services works closely with public health officials to ensure plans are in place at all times to mitigate the spread of any contagious virus or disease in the province’s correctional facilities.",
-20,2020-03-16,,Canada,Nova Scotia,,2 New cases - related,General case announcement,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200316001,,,Government Website,Two New Presumptive Cases of COVID-19 in Nova Scotia,"Dr. Robert Strang, Nova Scotia’s chief medical officer of health has announced two new presumptive cases of COVID-19 bringing the total number of presumptive positives in the province to five.
+20,2020-03-16,,Canada,Nova Scotia,,2 New cases - related,General case announcement,General,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200316001,,,Government Website,Two New Presumptive Cases of COVID-19 in Nova Scotia,"Dr. Robert Strang, Nova Scotia’s chief medical officer of health has announced two new presumptive cases of COVID-19 bringing the total number of presumptive positives in the province to five.
 
 The two cases are in Halifax Regional Municipality and are related. The case details include:
 a male and female, both in their 50’s, were in close contact with individuals who had recently travelled outside the country
@@ -15171,7 +15171,7 @@ Quick Facts:
 as of March 16, Nova Scotia has completed 676 tests for COVID-19, with 671 negative results and five presumptive positive cases. Testing numbers are updated daily at https://novascotia.ca/coronavirus
 the Government of Canada has issued a travel advisory asking Canadians to avoid non-essential travel outside Canada until further notice
 Nova Scotia’s Health Protection Act gives the chief medical officer of health the authority to give advice to protect public health and decrease risk to public health presented by communicable diseases such as COVID-19",
-21,2020-03-17,,Canada,Nova Scotia,,3 new presumptive cases - travel related and related to earlier cases,General case announcement,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200317001,,,Government Website,New Presumptive Cases of COVID-19 in Nova Scotia,"Dr. Robert Strang, Nova Scotia’s chief medical officer of health has announced two new presumptive cases of COVID-19, bringing the total number of positives in the province to seven.
+21,2020-03-17,,Canada,Nova Scotia,,3 new presumptive cases - travel related and related to earlier cases,General case announcement,General,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200317001,,,Government Website,New Presumptive Cases of COVID-19 in Nova Scotia,"Dr. Robert Strang, Nova Scotia’s chief medical officer of health has announced two new presumptive cases of COVID-19, bringing the total number of positives in the province to seven.
 
 As of today, March 17, Nova Scotia has 934 negative test results, six presumptive positive cases and one confirmed case
 
@@ -15189,7 +15189,7 @@ Quick Facts:
 testing numbers are updated daily at https://novascotia.ca/coronavirus
 the Government of Canada has issued a travel advisory asking Canadians to avoid non-essential travel outside Canada until further notice
 Nova Scotia’s Health Protection Act gives the chief medical officer of health the authority to give advice to protect public health and decrease risk to public health presented by communicable diseases such as COVID-19",
-22,2020-03-18,,Canada,Nova Scotia,,"Access NS and Registry of MVO are closing, extending driver licence and vehicle registration to Aug 31",Non-essential workplace closure,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200317003,,,Government Website,"Closure of Access Nova Scotia and Registry of Motor Vehicle Offices, Deadline Extension","Nova Scotians are being asked to take every precaution including social distancing to prevent the spread of COVID-19. That is why Access Nova Scotia and Registry of Motor Vehicle Offices are temporarily closing for one week starting Wednesday, March 18, to establish new ways of providing service to minimize contact between people. Offices are expected to reopen Wednesday, March 25.
+22,2020-03-18,,Canada,Nova Scotia,,"Access NS and Registry of MVO are closing, extending driver licence and vehicle registration to Aug 31",Non-essential workplace closure,General,Not Applicable,S2 Workplace closing,2.0,,,0.0,,,,,https://novascotia.ca/news/release/?id=20200317003,,,Government Website,"Closure of Access Nova Scotia and Registry of Motor Vehicle Offices, Deadline Extension","Nova Scotians are being asked to take every precaution including social distancing to prevent the spread of COVID-19. That is why Access Nova Scotia and Registry of Motor Vehicle Offices are temporarily closing for one week starting Wednesday, March 18, to establish new ways of providing service to minimize contact between people. Offices are expected to reopen Wednesday, March 25.
 
 Government is also extending the date for driver licences and vehicle registrations expiring in March, April and May to Aug. 31. All law enforcement agencies have been notified of the extensions. Some of the services offered through Access Nova Scotia and Registry of Motor Vehicle Offices are available online at https://www.novascotia.ca/sns/access/online-services.asp
 
@@ -15198,7 +15198,7 @@ there are 20 Access Centres/Registry of Motor Vehicles Offices in Nova Scotia
 about 10,000 driver licences are renewed monthly
 between 20,000-25,000 vehicle registrations are renewed monthly
 Nova Scotians can call the provincial contact centre with urgent enquiries at 1-800-670-4357.",
-23,2020-03-17,,Canada,Nova Scotia,,No public gatherings over 50 ppl,Public event size restriction (<=50),General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200317005,,,Government Website,"Province's Bars to Close, Restaurants Limited to Take-out, Delivery as of Thursday; Gatherings Limited to 50 or Fewer Effective Immediately","Dr. Robert Strang, Nova Scotia’s chief medical officer of health, and Premier Stephen McNeil announced new measures today, March 17, to prevent the spread of COVID-19.
+23,2020-03-17,,Canada,Nova Scotia,,No public gatherings over 50 ppl,Public event size restriction (<=50),General,Not Applicable,S3 Cancel public events,2.0,,,1.0,,,,,https://novascotia.ca/news/release/?id=20200317005,,,Government Website,"Province's Bars to Close, Restaurants Limited to Take-out, Delivery as of Thursday; Gatherings Limited to 50 or Fewer Effective Immediately","Dr. Robert Strang, Nova Scotia’s chief medical officer of health, and Premier Stephen McNeil announced new measures today, March 17, to prevent the spread of COVID-19.
 
 Effectively immediately, there are to be no gatherings of more than 50 people.
 
@@ -15216,7 +15216,7 @@ Quick Facts:
 testing numbers are updated daily at https://novascotia.ca/coronavirus
 the Government of Canada has issued a travel advisory asking Canadians to avoid non-essential travel outside Canada until further notice
 Nova Scotia’s Health Protection Act gives the chief medical officer of health the authority to give advice to protect public health and decrease risk to public health presented by communicable diseases such as COVID-19",
-24,2020-03-19,,Canada,Nova Scotia,,Closing all drinking establishments,Non-essential workplace closure,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200317005,,,Government Website,"Province's Bars to Close, Restaurants Limited to Take-out, Delivery as of Thursday; Gatherings Limited to 50 or Fewer Effective Immediately","Dr. Robert Strang, Nova Scotia’s chief medical officer of health, and Premier Stephen McNeil announced new measures today, March 17, to prevent the spread of COVID-19.
+24,2020-03-19,,Canada,Nova Scotia,,Closing all drinking establishments,Non-essential workplace closure,General,Not Applicable,S2 Workplace closing,2.0,,,1.0,,,,,https://novascotia.ca/news/release/?id=20200317005,,,Government Website,"Province's Bars to Close, Restaurants Limited to Take-out, Delivery as of Thursday; Gatherings Limited to 50 or Fewer Effective Immediately","Dr. Robert Strang, Nova Scotia’s chief medical officer of health, and Premier Stephen McNeil announced new measures today, March 17, to prevent the spread of COVID-19.
 
 Effectively immediately, there are to be no gatherings of more than 50 people.
 
@@ -15234,7 +15234,7 @@ Quick Facts:
 testing numbers are updated daily at https://novascotia.ca/coronavirus
 the Government of Canada has issued a travel advisory asking Canadians to avoid non-essential travel outside Canada until further notice
 Nova Scotia’s Health Protection Act gives the chief medical officer of health the authority to give advice to protect public health and decrease risk to public health presented by communicable diseases such as COVID-19",
-25,2020-03-19,,Canada,Nova Scotia,,Restaurants are restricted to take-out/delivery,Restaurant visiting restrictions,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200317005,,,Government Website,"Province's Bars to Close, Restaurants Limited to Take-out, Delivery as of Thursday; Gatherings Limited to 50 or Fewer Effective Immediately","Dr. Robert Strang, Nova Scotia’s chief medical officer of health, and Premier Stephen McNeil announced new measures today, March 17, to prevent the spread of COVID-19.
+25,2020-03-19,,Canada,Nova Scotia,,Restaurants are restricted to take-out/delivery,Restaurant visiting restrictions,General,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200317005,,,Government Website,"Province's Bars to Close, Restaurants Limited to Take-out, Delivery as of Thursday; Gatherings Limited to 50 or Fewer Effective Immediately","Dr. Robert Strang, Nova Scotia’s chief medical officer of health, and Premier Stephen McNeil announced new measures today, March 17, to prevent the spread of COVID-19.
 
 Effectively immediately, there are to be no gatherings of more than 50 people.
 
@@ -15270,7 +15270,7 @@ Quick Facts:
 testing numbers are updated daily at https://novascotia.ca/coronavirus
 the Government of Canada has issued a travel advisory asking Canadians to avoid non-essential travel outside Canada until further notice
 Nova Scotia’s Health Protection Act gives the chief medical officer of health the authority to give advice to protect public health and decrease risk to public health presented by communicable diseases such as COVID-19",
-27,2020-03-18,,Canada,Nova Scotia,,5 New presumptive cases - 4 travel-related and one related to an earlier case,General case announcement,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200318001,,,Government Website,Five New Presumptive Cases of COVID-19 in Nova Scotia,"As of today, Nova Scotia has three confirmed cases and nine presumptive cases of COVID-19.
+27,2020-03-18,,Canada,Nova Scotia,,5 New presumptive cases - 4 travel-related and one related to an earlier case,General case announcement,General,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200318001,,,Government Website,Five New Presumptive Cases of COVID-19 in Nova Scotia,"As of today, Nova Scotia has three confirmed cases and nine presumptive cases of COVID-19.
 
 Five new cases were identified Tuesday, March 17. Four of the cases are travel-related and one is connected to an earlier case.
 
@@ -15290,7 +15290,7 @@ Quick Facts:
 testing numbers are updated daily at https://novascotia.ca/coronavirus
 the Government of Canada has issued a travel advisory asking Canadians to avoid non-essential travel outside Canada until further notice
 Nova Scotia’s Health Protection Act gives the chief medical officer of health the authority to give advice to protect public health and decrease risk to public health presented by communicable diseases such as COVID-19",
-28,2020-03-18,,Canada,Nova Scotia,,Releasing 41 individuals who had an intermittent sentence,Correctional facility restrictions,Incarcerated Adults,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200318003,,,Government Website,Correctional Facilities Take Further Action to Prevent COVID-19,"To help further prevent COVID-19 from impacting inmates and staff at correctional facilities, 41 people who are serving intermittent sentences in the province’s four adult correctional facilities will be released on temporary absence.
+28,2020-03-18,,Canada,Nova Scotia,,Releasing 41 individuals who had an intermittent sentence,Correctional facility restrictions,Incarcerated Adults,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200318003,,,Government Website,Correctional Facilities Take Further Action to Prevent COVID-19,"To help further prevent COVID-19 from impacting inmates and staff at correctional facilities, 41 people who are serving intermittent sentences in the province’s four adult correctional facilities will be released on temporary absence.
 
 An intermittent sentence is ordered by a court and allows a person to serve a sentence in small blocks of time – usually on weekends - instead of all at once.
 
@@ -15301,7 +15301,7 @@ This health protection measure is being made with the guidance and advice of pub
 On March 15, Correctional Services closed its facilities to all visitors until further notice.
 
 Correctional Services works closely with public health officials to ensure plans are in place at all times to mitigate the spread of any contagious virus or disease in the province’s correctional facilities.",
-29,2020-03-19,,Canada,Nova Scotia,,Closing personal service and fitness establishments,Non-essential workplace closure,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200318004,,,Government Website,"New Restrictions; Province, Health System Working to Increase Capacity","Dr. Robert Strang, Nova Scotia’s chief medical officer of health, Premier Stephen McNeil and Minister of Health and Wellness Randy Delorey announced today, March 18, measures to further prevent the spread of COVID-19 and increase capacity within the health system to respond.
+29,2020-03-19,,Canada,Nova Scotia,,Closing personal service and fitness establishments,Non-essential workplace closure,General,Not Applicable,S2 Workplace closing,2.0,,,,,,,,https://novascotia.ca/news/release/?id=20200318004,,,Government Website,"New Restrictions; Province, Health System Working to Increase Capacity","Dr. Robert Strang, Nova Scotia’s chief medical officer of health, Premier Stephen McNeil and Minister of Health and Wellness Randy Delorey announced today, March 18, measures to further prevent the spread of COVID-19 and increase capacity within the health system to respond.
 
 Effective immediately:
 doctors and pharmacists have new options for virtual care, using telephone and secure videoconferencing
@@ -15320,7 +15320,7 @@ Nova Scotians can find accurate, up-to-date information, handwashing posters and
 Quick Facts:
 testing numbers are updated daily at https://novascotia.ca/coronavirus
 Nova Scotia’s Health Protection Act gives the chief medical officer of health the authority to give advice to protect public health and decrease risk to public health presented by communicable diseases such as COVID-19",
-30,2020-03-18,,Canada,Nova Scotia,,Virtual care options for doctors and pharmacists,Healthcare facility restrictions,Healthcare Workers,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200318004,,,Government Website,"New Restrictions; Province, Health System Working to Increase Capacity","Dr. Robert Strang, Nova Scotia’s chief medical officer of health, Premier Stephen McNeil and Minister of Health and Wellness Randy Delorey announced today, March 18, measures to further prevent the spread of COVID-19 and increase capacity within the health system to respond.
+30,2020-03-18,,Canada,Nova Scotia,,Virtual care options for doctors and pharmacists,Healthcare facility restrictions,Healthcare Workers,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200318004,,,Government Website,"New Restrictions; Province, Health System Working to Increase Capacity","Dr. Robert Strang, Nova Scotia’s chief medical officer of health, Premier Stephen McNeil and Minister of Health and Wellness Randy Delorey announced today, March 18, measures to further prevent the spread of COVID-19 and increase capacity within the health system to respond.
 
 Effective immediately:
 doctors and pharmacists have new options for virtual care, using telephone and secure videoconferencing
@@ -15339,7 +15339,7 @@ Nova Scotians can find accurate, up-to-date information, handwashing posters and
 Quick Facts:
 testing numbers are updated daily at https://novascotia.ca/coronavirus
 Nova Scotia’s Health Protection Act gives the chief medical officer of health the authority to give advice to protect public health and decrease risk to public health presented by communicable diseases such as COVID-19",
-31,2020-03-18,,Canada,Nova Scotia,,Doctor's note can't be required to take a sick day,Employment Protections,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200318004,,,Government Website,"New Restrictions; Province, Health System Working to Increase Capacity","Dr. Robert Strang, Nova Scotia’s chief medical officer of health, Premier Stephen McNeil and Minister of Health and Wellness Randy Delorey announced today, March 18, measures to further prevent the spread of COVID-19 and increase capacity within the health system to respond.
+31,2020-03-18,,Canada,Nova Scotia,,Doctor's note can't be required to take a sick day,Employment Protections,General,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200318004,,,Government Website,"New Restrictions; Province, Health System Working to Increase Capacity","Dr. Robert Strang, Nova Scotia’s chief medical officer of health, Premier Stephen McNeil and Minister of Health and Wellness Randy Delorey announced today, March 18, measures to further prevent the spread of COVID-19 and increase capacity within the health system to respond.
 
 Effective immediately:
 doctors and pharmacists have new options for virtual care, using telephone and secure videoconferencing
@@ -15358,7 +15358,7 @@ Nova Scotians can find accurate, up-to-date information, handwashing posters and
 Quick Facts:
 testing numbers are updated daily at https://novascotia.ca/coronavirus
 Nova Scotia’s Health Protection Act gives the chief medical officer of health the authority to give advice to protect public health and decrease risk to public health presented by communicable diseases such as COVID-19",
-32,2020-03-18,,Canada,Nova Scotia,,CPSO waiving fee for retired doctors to renew licences,Improve testing capacity,Healthcare Workers,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200318004,,,Government Website,"New Restrictions; Province, Health System Working to Increase Capacity","Dr. Robert Strang, Nova Scotia’s chief medical officer of health, Premier Stephen McNeil and Minister of Health and Wellness Randy Delorey announced today, March 18, measures to further prevent the spread of COVID-19 and increase capacity within the health system to respond.
+32,2020-03-18,,Canada,Nova Scotia,,CPSO waiving fee for retired doctors to renew licences,Improve testing capacity,Healthcare Workers,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200318004,,,Government Website,"New Restrictions; Province, Health System Working to Increase Capacity","Dr. Robert Strang, Nova Scotia’s chief medical officer of health, Premier Stephen McNeil and Minister of Health and Wellness Randy Delorey announced today, March 18, measures to further prevent the spread of COVID-19 and increase capacity within the health system to respond.
 
 Effective immediately:
 doctors and pharmacists have new options for virtual care, using telephone and secure videoconferencing
@@ -15377,7 +15377,7 @@ Nova Scotians can find accurate, up-to-date information, handwashing posters and
 Quick Facts:
 testing numbers are updated daily at https://novascotia.ca/coronavirus
 Nova Scotia’s Health Protection Act gives the chief medical officer of health the authority to give advice to protect public health and decrease risk to public health presented by communicable diseases such as COVID-19",
-33,2020-03-18,,Canada,Nova Scotia,,Retired and other nurses are being brought into the system to help with 811 staffing,Health workforce task-shifting,Healthcare Workers,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200318004,,,Government Website,"New Restrictions; Province, Health System Working to Increase Capacity","Dr. Robert Strang, Nova Scotia’s chief medical officer of health, Premier Stephen McNeil and Minister of Health and Wellness Randy Delorey announced today, March 18, measures to further prevent the spread of COVID-19 and increase capacity within the health system to respond.
+33,2020-03-18,,Canada,Nova Scotia,,Retired and other nurses are being brought into the system to help with 811 staffing,Health workforce task-shifting,Healthcare Workers,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200318004,,,Government Website,"New Restrictions; Province, Health System Working to Increase Capacity","Dr. Robert Strang, Nova Scotia’s chief medical officer of health, Premier Stephen McNeil and Minister of Health and Wellness Randy Delorey announced today, March 18, measures to further prevent the spread of COVID-19 and increase capacity within the health system to respond.
 
 Effective immediately:
 doctors and pharmacists have new options for virtual care, using telephone and secure videoconferencing
@@ -15396,7 +15396,7 @@ Nova Scotians can find accurate, up-to-date information, handwashing posters and
 Quick Facts:
 testing numbers are updated daily at https://novascotia.ca/coronavirus
 Nova Scotia’s Health Protection Act gives the chief medical officer of health the authority to give advice to protect public health and decrease risk to public health presented by communicable diseases such as COVID-19",
-34,2020-03-18,,Canada,Nova Scotia,,Services from Department of Community Services' Disability Support Program will be closed,Non-essential workplace closure,Vulnerable Populations - Low SES ,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200318004,,,Government Website,"New Restrictions; Province, Health System Working to Increase Capacity","Dr. Robert Strang, Nova Scotia’s chief medical officer of health, Premier Stephen McNeil and Minister of Health and Wellness Randy Delorey announced today, March 18, measures to further prevent the spread of COVID-19 and increase capacity within the health system to respond.
+34,2020-03-18,,Canada,Nova Scotia,,Services from Department of Community Services' Disability Support Program will be closed,Non-essential workplace closure,Vulnerable Populations - Low SES ,Not Applicable,S2 Workplace closing,2.0,,,,,,,,https://novascotia.ca/news/release/?id=20200318004,,,Government Website,"New Restrictions; Province, Health System Working to Increase Capacity","Dr. Robert Strang, Nova Scotia’s chief medical officer of health, Premier Stephen McNeil and Minister of Health and Wellness Randy Delorey announced today, March 18, measures to further prevent the spread of COVID-19 and increase capacity within the health system to respond.
 
 Effective immediately:
 doctors and pharmacists have new options for virtual care, using telephone and secure videoconferencing
@@ -15415,7 +15415,7 @@ Nova Scotians can find accurate, up-to-date information, handwashing posters and
 Quick Facts:
 testing numbers are updated daily at https://novascotia.ca/coronavirus
 Nova Scotia’s Health Protection Act gives the chief medical officer of health the authority to give advice to protect public health and decrease risk to public health presented by communicable diseases such as COVID-19",
-35,2020-03-19,,Canada,Nova Scotia,,Two new presumptive cases- travel related,General case announcement,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200319003,,,Government Website,Two New Presumptive Cases of COVID-19 in Nova Scotia,"As of today, March 19, Nova Scotia has five confirmed cases and nine presumptive cases of COVID-19, for a total of 14.
+35,2020-03-19,,Canada,Nova Scotia,,Two new presumptive cases- travel related,General case announcement,General,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200319003,,,Government Website,Two New Presumptive Cases of COVID-19 in Nova Scotia,"As of today, March 19, Nova Scotia has five confirmed cases and nine presumptive cases of COVID-19, for a total of 14.
 
 Two new cases were identified Wednesday, March 18. Both are travel-related.
 
@@ -15434,7 +15434,7 @@ Today’s update will be livestreamed at 3 p.m. on https://novascotia.ca/stayinf
 Quick Facts:
 testing numbers are updated daily at https://novascotia.ca/coronavirus
 Nova Scotia’s Health Protection Act gives the chief medical officer of health the authority to give advice to protect public health and decrease risk to public health presented by communicable diseases such as COVID-19",
-36,2020-03-19,,Canada,Nova Scotia,,Financial aid to vulnerable individuals,Emergency economic funding,Vulnerable Populations - Low SES ,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200319004,,,Government Website,Measures to Help Vulnerable Nova Scotians,"Premier Stephen McNeil, Community Services Minister Kelly Regan and Dr. Robert Strang, Nova Scotia’s chief medical officer of health, announced today, March 19, measures to help vulnerable Nova Scotians and to further prevent the spread of COVID-19 in the province.
+36,2020-03-19,,Canada,Nova Scotia,,Financial aid to vulnerable individuals,Emergency economic funding,Vulnerable Populations - Low SES ,Not Applicable,S8 Fiscal measures,,,,,3200000.0,,,,https://novascotia.ca/news/release/?id=20200319004,,,Government Website,Measures to Help Vulnerable Nova Scotians,"Premier Stephen McNeil, Community Services Minister Kelly Regan and Dr. Robert Strang, Nova Scotia’s chief medical officer of health, announced today, March 19, measures to help vulnerable Nova Scotians and to further prevent the spread of COVID-19 in the province.
 
 Measures announced today to help vulnerable Nova Scotians include:
 investing $2.2 million so that every individual and family member on income assistance will receive an additional $50 starting Friday, March 20, to help pay for food, cleaning supplies and personal care items. People do not need to apply.
@@ -15453,7 +15453,7 @@ Nova Scotians can find accurate, up-to-date information, handwashing posters and
 Quick Facts:
 testing numbers are updated daily at https://novascotia.ca/coronavirus
 Nova Scotia’s Health Protection Act gives the chief medical officer of health the authority to give advice to protect public health and decrease risk to public health presented by communicable diseases such as COVID-19",
-37,2020-03-20,,Canada,Nova Scotia,,2 new cases,General case announcement,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200320001,,,Government Website,One New Presumptive Case of COVID-19 in Nova Scotia,"As of today, Nova Scotia has five confirmed cases and ten presumptive cases of COVID-19, for a total of 15.
+37,2020-03-20,,Canada,Nova Scotia,,2 new cases,General case announcement,General,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200320001,,,Government Website,One New Presumptive Case of COVID-19 in Nova Scotia,"As of today, Nova Scotia has five confirmed cases and ten presumptive cases of COVID-19, for a total of 15.
 
 One new case was identified Thursday, March 19. It is travel-related.
 
@@ -15472,7 +15472,7 @@ Today’s update will be livestreamed at 3 p.m. on https://novascotia.ca/stayinf
 Quick Facts:
 testing numbers are updated daily at https://novascotia.ca/coronavirus
 Nova Scotia’s Health Protection Act gives the chief medical officer of health the authority to give advice to protect public health and decrease risk to public health presented by communicable diseases such as COVID-19",
-38,2020-03-20,,Canada,Nova Scotia,,"Financial measures to support small and medium businesses as well as students, defer government payments for these groups",Emergency economic funding,Small businesses,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200320003,,,Government Website,"Measures to Help Nova Scotia Businesss, Students","Premier Stephen McNeil, Minister of Business Geoff MacLellan and Dr. Robert Strang, Nova Scotia’s chief medical officer of health, announced today, March 20, measures to help Nova Scotians and Nova Scotia businesses dealing with COVID-19.
+38,2020-03-20,,Canada,Nova Scotia,,"Financial measures to support small and medium businesses as well as students, defer government payments for these groups",Emergency economic funding,Businesses,Not Applicable,S8 Fiscal measures,,,,,161000000.0,,,,https://novascotia.ca/news/release/?id=20200320003,,,Government Website,"Measures to Help Nova Scotia Businesss, Students","Premier Stephen McNeil, Minister of Business Geoff MacLellan and Dr. Robert Strang, Nova Scotia’s chief medical officer of health, announced today, March 20, measures to help Nova Scotians and Nova Scotia businesses dealing with COVID-19.
 
 Effective immediately, government will invest $161 million to address cash flow and access to credit for small and medium-sized businesses in Nova Scotia.
 
@@ -15495,7 +15495,7 @@ Nova Scotians can find accurate, up-to-date information, handwashing posters and
 Quick Facts:
 testing numbers are updated daily at https://novascotia.ca/coronavirus
 Nova Scotia’s Health Protection Act gives the chief medical officer of health the authority to give advice to protect public health and decrease risk to public health presented by communicable diseases such as COVID-19",
-39,2020-03-20,,Canada,Nova Scotia,,Deferring government payments for Fishing Industries,Emergency economic funding,Small businesses,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200320005,,,Government Website,Fisheries Ministers Unified to Support Industry,"The fishing and aquaculture industries are a vital part of the province’s economy and an important source of food.
+39,2020-03-20,,Canada,Nova Scotia,,Deferring government payments for Fishing Industries,Emergency economic funding,Businesses,Not Applicable,S8 Fiscal measures,,,,,,,,,https://novascotia.ca/news/release/?id=20200320005,,,Government Website,Fisheries Ministers Unified to Support Industry,"The fishing and aquaculture industries are a vital part of the province’s economy and an important source of food.
 
 Fisheries and Aquaculture Minister Keith Colwell is meeting regularly with the ministers responsible for fisheries and aquaculture in the other Atlantic provinces and Quebec to discuss ways to support the seafood industry during the COVID-19 crisis.
 
@@ -15522,7 +15522,7 @@ total fish and seafood exports from Nova Scotia were $2.3 billion in 2019, a 13.
 lobster led the way as Nova Scotia’s most valuable export species in 2019, valued at almost $1.2 billion
 aquaculture delivers new, well-paying, year-round jobs centered in coastal and rural communities within Nova Scotia, where they are needed most
 Nova Scotia’s aquaculture industry was worth more than $88 million and directly employed 519 people in full- and part-time positions in 2018. Additional Resources: Department of Fisheries and Aquaculture: https://novascotia.ca/fish",
-40,2020-03-21,,Canada,Nova Scotia,,6 new cases - travel-related,General case announcement,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200321001,,,Government Website,Six New Cases of COVID-19 in Nova Scotia,"As of today, March 21, Nova Scotia has nine confirmed cases and 12 presumptive cases of COVID-19, for a total of 21.
+40,2020-03-21,,Canada,Nova Scotia,,6 new cases - travel-related,General case announcement,General,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200321001,,,Government Website,Six New Cases of COVID-19 in Nova Scotia,"As of today, March 21, Nova Scotia has nine confirmed cases and 12 presumptive cases of COVID-19, for a total of 21.
 
 Six new cases were identified Friday, March 20. All are travel-related. The original hospitalized case has been released and is recovering at home. One of the other confirmed cases is hospitalized.
 
@@ -15544,7 +15544,7 @@ providing support to public health as they give advice on measures to slow down 
 ensuring facilities are well-prepared to meet the health-care needs of Nova Scotians during a pandemic
 opening new assessment centres to meet the need for assessments (there are now 14 centres around the province)
 Anyone who has travelled outside of Canada must self-isolate for 14 days when they return to Nova Scotia. If you have been in close contact with someone who has travelled and are experiencing fever (above 38 C) and/or new cough you should complete the online questionnaire before calling 811. The online questionnaire can be found at: https://811.novascotia.ca/",
-41,2020-03-22,,Canada,Nova Scotia,,State of Emergency declared - can't leave province and only leave home for essential item/services,Declaration of emergency (or similar),General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200322001,,,Government Website,"State of Emergency Declared in Response to COVID-19, Seven New Cases","Today, March 22, Nova Scotia declared a provincial state of emergency to help contain the spread of COVID-19. Nova Scotians should not leave the province and only leave home for essential items and services.
+41,2020-03-22,,Canada,Nova Scotia,,State of Emergency declared - can't leave province and only leave home for essential item/services,Declaration of emergency (or similar),General,Not Applicable,S6 Restrictions on internal movements,2.0,,,,,,,,https://novascotia.ca/news/release/?id=20200322001,,,Government Website,"State of Emergency Declared in Response to COVID-19, Seven New Cases","Today, March 22, Nova Scotia declared a provincial state of emergency to help contain the spread of COVID-19. Nova Scotians should not leave the province and only leave home for essential items and services.
 
 A state of emergency gives government broad powers to do whatever is necessary for the safety and protection of Nova Scotians.
 
@@ -15573,7 +15573,7 @@ Nova Scotia’s Health Protection Act gives the chief medical officer of health 
 the state of emergency is declared under the Emergency Management Act and comes into effect today, March 22, at noon until noon, April 5.
 under the state of emergency government can control or prohibit assembly as well as travel to and from areas. It can also coordinate commerce activity and emergency responders
 high-touch surfaces in homes and workspaces should be cleaned and disinfected with store bought cleaning products or a solution made up of one part bleach to nine parts water",
-42,2020-03-23,,Canada,Nova Scotia,,13 New cases - travel related/related to earlier cases,General case announcement,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200323001,,,Government Website,13 New Cases of COVID-19 in Nova Scotia,"As of today, March 23, Nova Scotia has 41 confirmed cases of COVID-19.
+42,2020-03-23,,Canada,Nova Scotia,,13 New cases - travel related/related to earlier cases,General case announcement,General,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200323001,,,Government Website,13 New Cases of COVID-19 in Nova Scotia,"As of today, March 23, Nova Scotia has 41 confirmed cases of COVID-19.
 
 Thirteen new cases were identified Sunday, March 22. The cases are travel-related or related to earlier reported cases. Several of the new cases are connected and involve groups or families who have returned to Nova Scotia following travel outside of Canada.
 
@@ -15594,7 +15594,7 @@ testing numbers are updated daily at https://novascotia.ca/coronavirus
 Nova Scotia's Health Protection Act gives the chief medical officer of health the authority to give advice to protect public health and decrease risk to public health presented by communicable diseases such as COVID-19
 a state of emergency was declared under the Emergency Management Act on March 22 and remains in effect until noon, April 5
 under the state of emergency government can control or prohibit assembly as well as travel to and from areas. It can also coordinate commerce activity and emergency responders",
-43,2020-03-24,,Canada,Nova Scotia,,10 New Cases - travel/earlier case related,General case announcement,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200324002,,,Government Website,Ten New Cases of COVID-19 in Nova Scotia,"As of today, March 24, Nova Scotia has 51 confirmed cases of COVID-19.
+43,2020-03-24,,Canada,Nova Scotia,,10 New Cases - travel/earlier case related,General case announcement,General,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200324002,,,Government Website,Ten New Cases of COVID-19 in Nova Scotia,"As of today, March 24, Nova Scotia has 51 confirmed cases of COVID-19.
 
 Ten new cases were identified Monday, March 23. The cases are travel-related or connected to earlier reported cases. Several of the new cases are connected to groups or families who have returned to Nova Scotia following travel outside of Canada. None of these cases are from spread within the community.
 
@@ -15615,7 +15615,7 @@ testing numbers are updated daily at https://novascotia.ca/coronavirus
 Nova Scotia's Health Protection Act gives the chief medical officer of health the authority to give advice to protect public health and decrease risk to public health presented by communicable diseases such as COVID-19
 a state of emergency was declared under the Emergency Management Act on March 22 and remains in effect until noon, April 5
 under the state of emergency government can control or prohibit assembly as well as travel to and from areas. It can also coordinate commerce activity and emergency responders",
-44,2020-03-24,,Canada,Nova Scotia,,Doubling lab capacity to accommodate increased testing,Improve testing capacity,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200324003,,,Government Website,Strengthening Health System and New Measures,"Premier Stephen McNeil and Dr. Robert Strang, Nova Scotia’s chief medical officer of health, announced further measures today, March 24, to strengthen the health system and help Nova Scotians dealing with COVID-19.
+44,2020-03-24,,Canada,Nova Scotia,,Doubling lab capacity to accommodate increased testing,Improve testing capacity,General,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200324003,,,Government Website,Strengthening Health System and New Measures,"Premier Stephen McNeil and Dr. Robert Strang, Nova Scotia’s chief medical officer of health, announced further measures today, March 24, to strengthen the health system and help Nova Scotians dealing with COVID-19.
 
 “Keeping Nova Scotians safe and healthy is our number one job. Everything we are doing, we are doing to keep you safe,” said Premier McNeil. “We all need to keep working together, support one another and make sure we are following the public health advice. That is the only way we can control the spread of this virus.”
 Measures announced today include:
@@ -15654,7 +15654,7 @@ a state of emergency was declared under the Emergency Management Act on March 22
 under the state of emergency government can control or prohibit assembly as well as travel to and from areas. It can also coordinate commerce activity and emergency responders
 testing numbers are updated daily at https://novascotia.ca/coronavirus
 Nova Scotia's Health Protection Act gives the chief medical officer of health the authority to give advice to protect public health and decrease risk to public health presented by communicable diseases such as COVID-19",
-45,2020-03-24,,Canada,Nova Scotia,,"Define essential services, everyone else should work from home",Education or Work from Home,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200324003,,,Government Website,,"Premier Stephen McNeil and Dr. Robert Strang, Nova Scotia’s chief medical officer of health, announced further measures today, March 24, to strengthen the health system and help Nova Scotians dealing with COVID-19.
+45,2020-03-24,,Canada,Nova Scotia,,"Define essential services, everyone else should work from home",Education or Work from Home,General,Not Applicable,S2 Workplace closing,2.0,,,,,,,,https://novascotia.ca/news/release/?id=20200324003,,,Government Website,,"Premier Stephen McNeil and Dr. Robert Strang, Nova Scotia’s chief medical officer of health, announced further measures today, March 24, to strengthen the health system and help Nova Scotians dealing with COVID-19.
 
 “Keeping Nova Scotians safe and healthy is our number one job. Everything we are doing, we are doing to keep you safe,” said Premier McNeil. “We all need to keep working together, support one another and make sure we are following the public health advice. That is the only way we can control the spread of this virus.”
 Measures announced today include:
@@ -15693,7 +15693,7 @@ a state of emergency was declared under the Emergency Management Act on March 22
 under the state of emergency government can control or prohibit assembly as well as travel to and from areas. It can also coordinate commerce activity and emergency responders
 testing numbers are updated daily at https://novascotia.ca/coronavirus
 Nova Scotia's Health Protection Act gives the chief medical officer of health the authority to give advice to protect public health and decrease risk to public health presented by communicable diseases such as COVID-19",
-46,2020-03-24,,Canada,Nova Scotia,,regulated healthcare professionals can only stay open for emergency/urgent cases/provide virtual care; non-regulated ones except for podiatrists should be closed,Education or Work from Home,Healthcare Workers,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200324003,,,Government Website,,"Premier Stephen McNeil and Dr. Robert Strang, Nova Scotia’s chief medical officer of health, announced further measures today, March 24, to strengthen the health system and help Nova Scotians dealing with COVID-19.
+46,2020-03-24,,Canada,Nova Scotia,,regulated healthcare professionals can only stay open for emergency/urgent cases/provide virtual care; non-regulated ones except for podiatrists should be closed,Education or Work from Home,Healthcare Workers,Not Applicable,S2 Workplace closing,2.0,,,,,,,,https://novascotia.ca/news/release/?id=20200324003,,,Government Website,,"Premier Stephen McNeil and Dr. Robert Strang, Nova Scotia’s chief medical officer of health, announced further measures today, March 24, to strengthen the health system and help Nova Scotians dealing with COVID-19.
 
 “Keeping Nova Scotians safe and healthy is our number one job. Everything we are doing, we are doing to keep you safe,” said Premier McNeil. “We all need to keep working together, support one another and make sure we are following the public health advice. That is the only way we can control the spread of this virus.”
 Measures announced today include:
@@ -15732,7 +15732,7 @@ a state of emergency was declared under the Emergency Management Act on March 22
 under the state of emergency government can control or prohibit assembly as well as travel to and from areas. It can also coordinate commerce activity and emergency responders
 testing numbers are updated daily at https://novascotia.ca/coronavirus
 Nova Scotia's Health Protection Act gives the chief medical officer of health the authority to give advice to protect public health and decrease risk to public health presented by communicable diseases such as COVID-19",
-47,2020-03-25,,Canada,Nova Scotia,,17 new cases,General case announcement,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200325001,,,Government Website,Seventeen New Cases of COVID-19 in Nova Scotia,"As of today, March 25, Nova Scotia has 68 confirmed cases of COVID-19.
+47,2020-03-25,,Canada,Nova Scotia,,17 new cases,General case announcement,General,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200325001,,,Government Website,Seventeen New Cases of COVID-19 in Nova Scotia,"As of today, March 25, Nova Scotia has 68 confirmed cases of COVID-19.
 
 Seventeen new cases were identified Tuesday, March 24. The cases are travel-related or connected to earlier reported cases. Several of the new cases are connected to groups or families who have returned to Nova Scotia following travel outside of Canada. None of these cases are from spread within the community.
 
@@ -15754,7 +15754,7 @@ Nova Scotia's Health Protection Act gives the chief medical officer of health th
 a state of emergency was declared under the Emergency Management Act on March 22 and remains in effect until noon, April 5
 under the state of emergency government can control or prohibit assembly as well as travel to and from areas. It can also coordinate commerce activity and emergency responders
 A new virus like COVID-19 can cause fear. Nova Scotians are encouraged to support each other and use technology to stay connected",
-48,2020-03-26,,Canada,Nova Scotia,,5 New cases,General case announcement,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200326002,,,Government Website,Five New Cases of COVID-19 in Nova Scotia,"As of today, March 26, Nova Scotia has 73 confirmed cases of COVID-19.
+48,2020-03-26,,Canada,Nova Scotia,,5 New cases,General case announcement,General,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200326002,,,Government Website,Five New Cases of COVID-19 in Nova Scotia,"As of today, March 26, Nova Scotia has 73 confirmed cases of COVID-19.
 
 Five new cases were identified Wednesday, March 25. Most are travel-related or connected to earlier cases. One of the new cases cannot currently be linked to travel or an earlier case. The investigation to determine the source of the exposure and whether any others may have been exposed is ongoing. At this point, public health cannot confirm that this case is linked to community spread.
 
@@ -15778,7 +15778,7 @@ Nova Scotia's Health Protection Act gives the chief medical officer of health th
 a state of emergency was declared under the Emergency Management Act on March 22 and remains in effect until noon, April 5
 under the state of emergency government can control or prohibit assembly as well as travel to and from areas. It can also coordinate commerce activity and emergency responders
 a new virus like COVID-19 can cause fear. Nova Scotians are encouraged to support each other and use technology to stay connected",
-49,2020-03-26,,Canada,Nova Scotia,,"Expanding group being tested to include - anyone referred by 811 to assessment centre, close contacts of people tested positive, people in hospital meeting testing criteria",Improve testing capacity,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200326003,,,Government Website,Testing for COVID-19 Expands; Health System Preparations,"Premier Stephen McNeil, Dr. Robert Strang, Nova Scotia’s chief medical officer of health, Dr. Brendan Carr, president and CEO of Nova Scotia Health Authority (NSHA) and Dr. Krista Jangaard, president and CEO of IWK Health Centre gave an update today, March 26, on the health system and efforts to help Nova Scotians dealing with COVID-19.
+49,2020-03-26,,Canada,Nova Scotia,,"Expanding group being tested to include - anyone referred by 811 to assessment centre, close contacts of people tested positive, people in hospital meeting testing criteria",Improve testing capacity,General,Not Applicable,S12 Testing policy,,,,,,,1.0,,https://novascotia.ca/news/release/?id=20200326003,,,Government Website,Testing for COVID-19 Expands; Health System Preparations,"Premier Stephen McNeil, Dr. Robert Strang, Nova Scotia’s chief medical officer of health, Dr. Brendan Carr, president and CEO of Nova Scotia Health Authority (NSHA) and Dr. Krista Jangaard, president and CEO of IWK Health Centre gave an update today, March 26, on the health system and efforts to help Nova Scotians dealing with COVID-19.
 
 “Our health-care system is being examined from top to bottom to ensure we are ready for COVID-19,” said Premier McNeil. “Our hospital administrators, our doctors and nurses, cleaning staff – everyone is focused on containing the spread. But none of this matters if you don’t stay at home and avoid social gatherings.”
 Dr. Strang said testing to confirm COVID-19 is being expanded to include:
@@ -15806,7 +15806,7 @@ Nova Scotia's Health Protection Act gives the chief medical officer of health th
 a state of emergency was declared under the Emergency Management Act on March 22 and remains in effect until noon, April 5
 under the state of emergency government can control or prohibit assembly as well as travel to and from areas. It can also coordinate commerce activity and emergency responders
 a new virus like COVID-19 can cause fear. Nova Scotians are encouraged to support each other and use technology to stay connected",
-50,2020-03-26,,Canada,Nova Scotia,,"alternative phone line for NSHA and IWK staff, home-care and long-term care providers, pharmacists, health providers in First Nations communities",Health workforce task-shifting,Healthcare Workers,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200326003,,,Government Website,Testing for COVID-19 Expands; Health System Preparations,"Premier Stephen McNeil, Dr. Robert Strang, Nova Scotia’s chief medical officer of health, Dr. Brendan Carr, president and CEO of Nova Scotia Health Authority (NSHA) and Dr. Krista Jangaard, president and CEO of IWK Health Centre gave an update today, March 26, on the health system and efforts to help Nova Scotians dealing with COVID-19.
+50,2020-03-26,,Canada,Nova Scotia,,"alternative phone line for NSHA and IWK staff, home-care and long-term care providers, pharmacists, health providers in First Nations communities",Health workforce task-shifting,Healthcare Workers,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200326003,,,Government Website,Testing for COVID-19 Expands; Health System Preparations,"Premier Stephen McNeil, Dr. Robert Strang, Nova Scotia’s chief medical officer of health, Dr. Brendan Carr, president and CEO of Nova Scotia Health Authority (NSHA) and Dr. Krista Jangaard, president and CEO of IWK Health Centre gave an update today, March 26, on the health system and efforts to help Nova Scotians dealing with COVID-19.
 
 “Our health-care system is being examined from top to bottom to ensure we are ready for COVID-19,” said Premier McNeil. “Our hospital administrators, our doctors and nurses, cleaning staff – everyone is focused on containing the spread. But none of this matters if you don’t stay at home and avoid social gatherings.”
 Dr. Strang said testing to confirm COVID-19 is being expanded to include:
@@ -15834,7 +15834,7 @@ Nova Scotia's Health Protection Act gives the chief medical officer of health th
 a state of emergency was declared under the Emergency Management Act on March 22 and remains in effect until noon, April 5
 under the state of emergency government can control or prohibit assembly as well as travel to and from areas. It can also coordinate commerce activity and emergency responders
 a new virus like COVID-19 can cause fear. Nova Scotians are encouraged to support each other and use technology to stay connected",
-51,2020-03-27,,Canada,Nova Scotia,,17 new cases,General case announcement,General,,,,,,,,,,,https://novascotia.ca/news/release/?id=20200327003,,,Government Website,Seventeen New Cases of COVID-19 in Nova Scotia,"As of today, March 27, Nova Scotia has 90 confirmed cases of COVID-19.
+51,2020-03-27,,Canada,Nova Scotia,,17 new cases,General case announcement,General,Not Applicable,,,,,,,,,,https://novascotia.ca/news/release/?id=20200327003,,,Government Website,Seventeen New Cases of COVID-19 in Nova Scotia,"As of today, March 27, Nova Scotia has 90 confirmed cases of COVID-19.
 
 Seventeen new cases were identified Thursday, March 26. Most are connected to travel or a known case. None of the new cases are connected to the St. Patrick’s Day gathering in Lake Echo, Halifax Regional Municipality. All attendees at the event are being contacted and are being tested. Case investigations are ongoing. At this point, public health cannot confirm a link to community spread.
 
@@ -17697,47 +17697,7 @@ More information for the agriculture and agri-food sector is available online.
 More information for businesses on how to maintain safe workspaces is available online.
 
 Up-to-date information about COVID-19 is available online.",
-91,2020-03-28,,Canada,New Brunswick,,"Federal government announced enhanced Farm Credit Canada's lending capacity by $5 billion ro ensure producers, agribusiness, and food production conintues to have capital access. ",Employment Protections,Small businesses,Not Applicable,S8 Fiscal measures,0.0,0.0,0.0,0.0,5000000000.0,,,,https://www2.gnb.ca/content/gnb/en/news/news_release.2020.03.0161.html,Government of New Brunswick,,Government Website,Six new cases of COVID-19; new toll-free line in operation for health-care workers,"FREDERICTON (GNB) – Public Health has updated the number of confirmed cases of COVID-19 in the province.
-
-Testing at the microbiology laboratory at the Dr. Georges-L.-Dumont University Hospital Centre in Moncton has identified six new cases, bringing the total number of confirmed cases in New Brunswick to 51. Two people who had COVID-19 have since recovered.
-
-The new cases are under investigation and further details will be forthcoming:
-
-An individual aged 50-59 in Zone 1 (southeast).
-An individual aged 70-79 in Zone 1 (southeast).
-An individual aged 20-29 in Zone 2 (south).
-An individual aged 20-29 in Zone 2 (south).
-An individual aged 50-59 in Zone 2 (south).
-An individual aged 70-79 in Zone 2 (south).
-“I cannot emphasize strongly enough how important it is to continue to follow the guidelines regarding physical distancing, remaining at home and frequent hand-washing,” said Dr. Jennifer Russell, chief medical officer of health. “These practices will save lives.”
-
-Russell announced on March 27 that the province has revised its testing protocols to protect health-care workers and to help slow the pace of transmission. Workers who have direct contact with patients and who have developed COVID-19 symptoms since March 20, are directed to immediately self-isolate. This includes employees of regional health authorities, long-term care facilities, the Extra-Mural program, First Nation communities; Ambulance New Brunswick, community physicians and pharmacists.
-
-Health-care workers who are self-employed or employed by other organizations and who have developed COVID-19 symptoms since March 20, are also directed to immediately self-isolate.
-
-Unless directed otherwise by their employer, workers in the health-care sector may call 1-833-475-0724 if they have developed the following symptoms:
-
-fever with a temperature of 38°C or higher;
-a new or worsening cough;
-shortness of breath.
-Employees who are not in the health-care field should follow their normal processes for reporting absences to their managers due to illness. They should not call the toll-free number designated for health-care workers. The toll-free line is also not for employees who have questions regarding pay, entitlements, or other concerns.
-
-In view of the good weather this weekend, Russell suggested people enjoy the outdoors while practising physical distancing.
-
-Food production
-
-Agriculture, aquaculture, fishing and processing operations are essential services and are permitted to continue; however, workplaces must take measures to limit the spread of COVID-19.
-
-“I thank New Brunswick’s farmers, harvesters, aquaculturists and processors for their dedication in providing high-quality and safe products to families across the province in these critical times,” said Premier Blaine Higgs. “They play an important role in keeping New Brunswickers healthy. We will continue to work with these sectors to address challenges as they arise.”
-
-In addition to operating loans for small businesses announced by the provincial government, the federal government announced earlier this week that it has enhanced Farm Credit Canada’s lending capacity by an additional $5 billion to ensure producers, agribusinesses and food processors continue to have access to capital. Businesses facing financial pressure may call 1-888-332-3301 to discuss their situation and options.
-
-More information for the agriculture and agri-food sector is available online.
-
-More information for businesses on how to maintain safe workspaces is available online.
-
-Up-to-date information about COVID-19 is available online.",
-92,2020-03-29,,Canada,New Brunswick,,"Testing at the microbiology laboratory at the Dr. Georges-L.-Dumont University Hospital Centre in Moncton has identified 15 new cases, bringing the total number of confirmed cases in New Brunswick to 66.",General case announcement,General,Not Applicable,S5 Public info campaigns,0.0,0.0,0.0,1.0,,,,,https://www2.gnb.ca/content/gnb/en/news/news_release.2020.03.0164.html,Government of New Brunswick,,Government Website,REVISED / Fifteen new cases of COVID-19,"EDITOR’S NOTE: The case numbers for Zone 2 and Zone 3 provided on Sunday, March 29, were incorrect. The correct numbers are below.
+91,2020-03-29,,Canada,New Brunswick,,"Testing at the microbiology laboratory at the Dr. Georges-L.-Dumont University Hospital Centre in Moncton has identified 15 new cases, bringing the total number of confirmed cases in New Brunswick to 66.",General case announcement,General,Not Applicable,S5 Public info campaigns,0.0,0.0,0.0,1.0,,,,,https://www2.gnb.ca/content/gnb/en/news/news_release.2020.03.0164.html,Government of New Brunswick,,Government Website,REVISED / Fifteen new cases of COVID-19,"EDITOR’S NOTE: The case numbers for Zone 2 and Zone 3 provided on Sunday, March 29, were incorrect. The correct numbers are below.
 
 FREDERICTON (GNB) – Public Health has updated the number of confirmed cases of COVID-19 in the province.
 
@@ -17782,7 +17742,7 @@ More information on the benefit and the application procedure is available onlin
 Up-to-date information about COVID-19 is available online.
 
 29-03-20",
-93,2020-03-30,,Canada,New Brunswick,,"First community transmission case confirmed. Dr. Jennifer Russell, the province’s chief medical officer of health, confirmed that incidents of community transmission are now present in New Brunswick; these are cases that cannot be directly traced back to an infection which took place outside the province. There are confirmed cases of community transmission in zones 1 (Moncton region), 2 (Saint John region) and 4 (Edmundston region). There are additional cases being investigated in other regions.",First case announcement,General,Not Applicable,S5 Public info campaigns,0.0,0.0,0.0,1.0,,,,,https://www2.gnb.ca/content/gnb/en/news/news_release.2020.03.0166.html,Government of New Brunswick,,Government Website,First community transmission case of COVID-19 confirmed,"FREDERICTON (GNB) – Public Health has updated the number of COVID-19 cases in New Brunswick and confirmed that community transmission is now present in the province.
+92,2020-03-30,,Canada,New Brunswick,,"First community transmission case confirmed. Dr. Jennifer Russell, the province’s chief medical officer of health, confirmed that incidents of community transmission are now present in New Brunswick; these are cases that cannot be directly traced back to an infection which took place outside the province. There are confirmed cases of community transmission in zones 1 (Moncton region), 2 (Saint John region) and 4 (Edmundston region). There are additional cases being investigated in other regions.",First case announcement,General,Not Applicable,S5 Public info campaigns,0.0,0.0,0.0,1.0,,,,,https://www2.gnb.ca/content/gnb/en/news/news_release.2020.03.0166.html,Government of New Brunswick,,Government Website,First community transmission case of COVID-19 confirmed,"FREDERICTON (GNB) – Public Health has updated the number of COVID-19 cases in New Brunswick and confirmed that community transmission is now present in the province.
 
 Two new cases have been confirmed, bringing the total number of cases to 68; two of those people have since fully recovered. The new confirmed cases are:
 
@@ -17856,7 +17816,7 @@ Those eligible will be able to apply online or by calling a phone number. More i
 The application deadline is Dec. 31, 2020.
 
 Up-to-date information about COVID-19 is available online.",
-94,2020-03-30,,Canada,New Brunswick,,"Two new cases have been confirmed, bringing the total number of cases to 68",General case announcement,General,Not Applicable,S5 Public info campaigns,0.0,0.0,0.0,1.0,,,,,https://www2.gnb.ca/content/gnb/en/news/news_release.2020.03.0166.html,Government of New Brunswick,,Government Website,First community transmission case of COVID-19 confirmed,"FREDERICTON (GNB) – Public Health has updated the number of COVID-19 cases in New Brunswick and confirmed that community transmission is now present in the province.
+93,2020-03-30,,Canada,New Brunswick,,"Two new cases have been confirmed, bringing the total number of cases to 68",General case announcement,General,Not Applicable,S5 Public info campaigns,0.0,0.0,0.0,1.0,,,,,https://www2.gnb.ca/content/gnb/en/news/news_release.2020.03.0166.html,Government of New Brunswick,,Government Website,First community transmission case of COVID-19 confirmed,"FREDERICTON (GNB) – Public Health has updated the number of COVID-19 cases in New Brunswick and confirmed that community transmission is now present in the province.
 
 Two new cases have been confirmed, bringing the total number of cases to 68; two of those people have since fully recovered. The new confirmed cases are:
 
@@ -17930,7 +17890,7 @@ Those eligible will be able to apply online or by calling a phone number. More i
 The application deadline is Dec. 31, 2020.
 
 Up-to-date information about COVID-19 is available online.",
-95,2020-03-30,,Canada,New Brunswick,,"Public Health is advising people who visited Shoppers Drug Mart at 175 Old Hampton Rd. in Quispamsis on the dates below that they were potentially exposed to COVID-19:
+94,2020-03-30,,Canada,New Brunswick,,"Public Health is advising people who visited Shoppers Drug Mart at 175 Old Hampton Rd. in Quispamsis on the dates below that they were potentially exposed to COVID-19:
 March 18 – 3:30 p.m. to midnight
 March 19 – 11:30 a.m. to 8:30 p.m.
 March 26 – 8:15 a.m. to 11:45 a.m.
@@ -18011,7 +17971,7 @@ Those eligible will be able to apply online or by calling a phone number. More i
 The application deadline is Dec. 31, 2020.
 
 Up-to-date information about COVID-19 is available online.",
-96,2020-03-30,,Canada,New Brunswick,,Testing for COVID-19 will now focus on 1) symptomatic health-care workers and staff of long-term care facilities and prisons 2) Hospitalized patients with respiratory symptoms or no alternative diagnosis 3) Residents of long-term care facilities and other vulnerable communities. Symptomatic returning travellers are still tested,Testing Definition Change,Symptomatic Individuals,Not Applicable,S5 Public info campaigns,0.0,0.0,0.0,0.0,,,,,https://www2.gnb.ca/content/gnb/en/news/news_release.2020.03.0166.html,Government of New Brunswick,,Government Website,First community transmission case of COVID-19 confirmed,"FREDERICTON (GNB) – Public Health has updated the number of COVID-19 cases in New Brunswick and confirmed that community transmission is now present in the province.
+95,2020-03-30,,Canada,New Brunswick,,Testing for COVID-19 will now focus on 1) symptomatic health-care workers and staff of long-term care facilities and prisons 2) Hospitalized patients with respiratory symptoms or no alternative diagnosis 3) Residents of long-term care facilities and other vulnerable communities. Symptomatic returning travellers are still tested,Testing Definition Change,Symptomatic Individuals,Not Applicable,S5 Public info campaigns,0.0,0.0,0.0,0.0,,,,,https://www2.gnb.ca/content/gnb/en/news/news_release.2020.03.0166.html,Government of New Brunswick,,Government Website,First community transmission case of COVID-19 confirmed,"FREDERICTON (GNB) – Public Health has updated the number of COVID-19 cases in New Brunswick and confirmed that community transmission is now present in the province.
 
 Two new cases have been confirmed, bringing the total number of cases to 68; two of those people have since fully recovered. The new confirmed cases are:
 
@@ -18085,7 +18045,7 @@ Those eligible will be able to apply online or by calling a phone number. More i
 The application deadline is Dec. 31, 2020.
 
 Up-to-date information about COVID-19 is available online.",
-97,2020-03-30,,Canada,New Brunswick,,Applications are now available for the $900 income benefit for workers or self-employed people in New Brunswick who have lost their jobs due to the COVID-19 situation.,Emergency economic funding,General,Not Applicable,S8 Fiscal measures,0.0,1.0,0.0,1.0,900.0,,,,https://www2.gnb.ca/content/gnb/en/news/news_release.2020.03.0166.html,Government of New Brunswick,,Government Website,First community transmission case of COVID-19 confirmed,"FREDERICTON (GNB) – Public Health has updated the number of COVID-19 cases in New Brunswick and confirmed that community transmission is now present in the province.
+96,2020-03-30,,Canada,New Brunswick,,Applications are now available for the $900 income benefit for workers or self-employed people in New Brunswick who have lost their jobs due to the COVID-19 situation.,Emergency economic funding,General,Not Applicable,S8 Fiscal measures,0.0,1.0,0.0,1.0,900.0,,,,https://www2.gnb.ca/content/gnb/en/news/news_release.2020.03.0166.html,Government of New Brunswick,,Government Website,First community transmission case of COVID-19 confirmed,"FREDERICTON (GNB) – Public Health has updated the number of COVID-19 cases in New Brunswick and confirmed that community transmission is now present in the province.
 
 Two new cases have been confirmed, bringing the total number of cases to 68; two of those people have since fully recovered. The new confirmed cases are:
 
@@ -18159,7 +18119,7 @@ Those eligible will be able to apply online or by calling a phone number. More i
 The application deadline is Dec. 31, 2020.
 
 Up-to-date information about COVID-19 is available online.",
-98,2020-03-30,,Canada,New Brunswick,,All municipal authorities are to have closed their respective playgrounds,Public park closure,General,Not Applicable,S6 Restrictions on internal movements,2.0,0.0,0.0,1.0,,,,,https://www2.gnb.ca/content/gnb/en/news/news_release.2020.03.0166.html,Government of New Brunswick,,Government Website,First community transmission case of COVID-19 confirmed,"FREDERICTON (GNB) – Public Health has updated the number of COVID-19 cases in New Brunswick and confirmed that community transmission is now present in the province.
+97,2020-03-30,,Canada,New Brunswick,,All municipal authorities are to have closed their respective playgrounds,Public park closure,General,Not Applicable,S6 Restrictions on internal movements,2.0,0.0,0.0,1.0,,,,,https://www2.gnb.ca/content/gnb/en/news/news_release.2020.03.0166.html,Government of New Brunswick,,Government Website,First community transmission case of COVID-19 confirmed,"FREDERICTON (GNB) – Public Health has updated the number of COVID-19 cases in New Brunswick and confirmed that community transmission is now present in the province.
 
 Two new cases have been confirmed, bringing the total number of cases to 68; two of those people have since fully recovered. The new confirmed cases are:
 
@@ -18233,11 +18193,11 @@ Those eligible will be able to apply online or by calling a phone number. More i
 The application deadline is Dec. 31, 2020.
 
 Up-to-date information about COVID-19 is available online.",
-99,2020-03-31,,Canada,New Brunswick,,"Testing at the microbiology laboratory at the Dr. Georges-L.-Dumont University Hospital Centre in Moncton has identified two new cases, bringing the total number of confirmed cases in New Brunswick to 70. Nine of those people have since recovered from the virus and one person remains in hospital.",General case announcement,General,Not Applicable,S5 Public info campaigns,0.0,0.0,0.0,1.0,,,,,https://www2.gnb.ca/content/gnb/en/news/news_release.2020.03.0169.html,Government of New Brunswick,,,,,
-100,2020-02-28,,Canada,New Brunswick,,FIrst public service announcement by New Brunswick Department of Public Health on Twitter regarding information on COVID-19,Public Announcement,General,Not Applicable,S5 Public info campaigns,0.0,1.0,0.0,1.0,,,,,https://twitter.com/NBHealth?lang=en,Twitter,New Brunswick Department of Health ,Social Media,Symptoms of Coronavirus,"Coronavirus is most commonly spread during close contact with symptomatic individuals, especially if coughing and sneezing. Have questions about Coronavirus? Call 1-833-784-4397 or visit: http://bit.ly/3a7Dqho #COVID19 #coronavirus #NBHealth",
-101,2020-04-03,,Canada,New Brunswick,,Public announcement on Twitter wit infographic on protecting yourself and others against coronavirus,Public Announcement,General,Not Applicable,S5 Public info campaigns,0.0,1.0,0.0,1.0,,,,,https://twitter.com/NBHealth?lang=en,Twitter,New Brunswick Department of Health ,Social Media,Steps for Effective Hand Washing,Washing your hands can go a long way toward protecting yourself and others against coronavirus. Wash your hands frequently with soap and water for at least 20 sec. Wash between your fingers and under your nails. For more information: http://gnb.ca/coronavirus.  #NBHealth #COVID19,
-102,2020-03-06,,Canada,New Brunswick,,Video by the Chief Medical Officer of Health on ways you can reduce the spread of Coronavirus and to contact 8-1-1 if you have questions,Public Announcement,General,Not Applicable,S5 Public info campaigns,0.0,1.0,0.0,1.0,,,,,https://twitter.com/NBHealth?lang=en,Twitter,Government of New Brunswick,Social Media,Help reduce your risk of infection and help prevent the spread of infections.,Help reduce your risk of infection and help prevent the spread of infections. #NBHealth #COVID19,
-103,2020-03-10,,Canada,New Brunswick,,,,,,,,,,,,,,,,,,,,,
+98,2020-03-31,,Canada,New Brunswick,,"Testing at the microbiology laboratory at the Dr. Georges-L.-Dumont University Hospital Centre in Moncton has identified two new cases, bringing the total number of confirmed cases in New Brunswick to 70. Nine of those people have since recovered from the virus and one person remains in hospital.",General case announcement,General,Not Applicable,S5 Public info campaigns,0.0,0.0,0.0,1.0,,,,,https://www2.gnb.ca/content/gnb/en/news/news_release.2020.03.0169.html,Government of New Brunswick,,,,,
+99,2020-02-28,,Canada,New Brunswick,,FIrst public service announcement by New Brunswick Department of Public Health on Twitter regarding information on COVID-19,Public Announcement,General,Not Applicable,S5 Public info campaigns,0.0,1.0,0.0,1.0,,,,,https://twitter.com/NBHealth?lang=en,Twitter,New Brunswick Department of Health ,Social Media,Symptoms of Coronavirus,"Coronavirus is most commonly spread during close contact with symptomatic individuals, especially if coughing and sneezing. Have questions about Coronavirus? Call 1-833-784-4397 or visit: http://bit.ly/3a7Dqho #COVID19 #coronavirus #NBHealth",
+100,2020-04-03,,Canada,New Brunswick,,Public announcement on Twitter wit infographic on protecting yourself and others against coronavirus,Public Announcement,General,Not Applicable,S5 Public info campaigns,0.0,1.0,0.0,1.0,,,,,https://twitter.com/NBHealth?lang=en,Twitter,New Brunswick Department of Health ,Social Media,Steps for Effective Hand Washing,Washing your hands can go a long way toward protecting yourself and others against coronavirus. Wash your hands frequently with soap and water for at least 20 sec. Wash between your fingers and under your nails. For more information: http://gnb.ca/coronavirus.  #NBHealth #COVID19,
+101,2020-03-06,,Canada,New Brunswick,,Video by the Chief Medical Officer of Health on ways you can reduce the spread of Coronavirus and to contact 8-1-1 if you have questions,Public Announcement,General,Not Applicable,S5 Public info campaigns,0.0,1.0,0.0,1.0,,,,,https://twitter.com/NBHealth?lang=en,Twitter,Government of New Brunswick,Social Media,Help reduce your risk of infection and help prevent the spread of infections.,Help reduce your risk of infection and help prevent the spread of infections. #NBHealth #COVID19,
+102,2020-03-10,,Canada,New Brunswick,,,,,,,,,,,,,,,,,,,,,
 0,2020-01-07,,Canada,Nunavut,,"Nunavut’s new Public Health Act came into force January 1, replacing the version carried over from the Northwest Territories",Public Announcement,General,Not Applicable,,,,,,,,,,https://www.gov.nu.ca/health/news/nunavut-made-public-health-act-becomes-law,Department of Health,,Government Website,Nunavut-made Public Health Act becomes law,"Nunavut-made Public Health Act becomes law
 07 January 2020
 
