@@ -10,7 +10,7 @@ This initial dataset release spans January 1st to June 14th, 2020; further data 
 
 Here we show the count of recorded interventions by time in the dataset:
 
-![Dataset Intervention Count](doc/img/intervention-count.png)
+![Dataset Intervention Count](doc/img/fig2.png)
 
 ## Get the Data
 
