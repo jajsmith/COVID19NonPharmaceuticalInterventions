@@ -918,3 +918,21 @@ def load_provinces(verbose=False):
             'saskatchewan' : load_saskatchewan(verbose), 
             'yukon' : load_yukon(verbose),
            }
+
+def load_all(verbose=False):
+    """
+    Parameters: 
+        - `verbose`
+            boolean, whether or not the function should print updates (False by default)
+
+    Returns: a DataFrame containing the information from all CSVs.
+    """
+
+    full_df = pd.DataFrame([], columns=_columns)
+    province_dict = load_provinces(verbose)
+
+    for province in province_dict:
+        df = province_dict[province]
+        full_df = full_df.append(df)
+    
+    return full_df
