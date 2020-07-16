@@ -146,7 +146,7 @@ def _load_british_columbia(since=datetime(2020, 1, 1), before=datetime.today(), 
     
     if verbose: print("\nLoading {} Releases\n".format(region))
 
-    query_url = 'https://news.gov.bc.ca/Search?FromDate=01/01/2020&Page='
+    query_url = 'https://news.gov.bc.ca/Search?FromDate=01/01/' + str(since.year) + '&Page='
     rows = []
     page = 1
     
@@ -185,7 +185,7 @@ def _load_british_columbia(since=datetime(2020, 1, 1), before=datetime.today(), 
                 full_text = get_article[0].text
             else:
                 if verbose: print("Couldn't retrieve full text for link: ", link)
-                full_text = ""
+                continue
 
             row = [pub_date, _country, region, subregion, link, _src_cat, title, full_text]
             rows.append(row)
@@ -727,7 +727,7 @@ def _load_newfoundland(since=datetime(2020, 1, 1), before=datetime.today(), verb
     Returns: a DataFrame containing news releases from the government of Newfoundland.
     """
     
-    region = 'Newfoundland'
+    region = 'Newfoundland and Labrador'
     sub_region = ''
     
     if verbose: print("\nLoading {} Releases\n".format(region))
