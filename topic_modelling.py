@@ -45,10 +45,10 @@ import pandas as pd
 def remove_stopwords(texts, stop_words):
     """
     Parameters:
-    - `texts`
-    a list of documents
-    - `stop_words`
-    a list of words to be removed from each document in `texts`
+        - `texts`
+            a list of documents
+        - `stop_words`
+            a list of words to be removed from each document in `texts`
     
     Returns: a list of documents that does not contain any element of `stop_words`
     """
@@ -57,8 +57,8 @@ def remove_stopwords(texts, stop_words):
 def clean_(doc):
     """
     Parameters:
-    - `doc`
-    a list of words
+        - `doc`
+            a list of words
     
     Returns: a documents with new lines and consecutive spaces replaced by single spaces
     """
@@ -69,8 +69,8 @@ def clean_(doc):
 def clean(texts):
     """
     Parameters:
-    - `texts`
-    a list of documents broken into words
+        - `texts`
+            a list of documents broken into words
     
     Returns: a list of documents with new lines and consecutive spaces replaced by single spaces
     """
@@ -79,8 +79,8 @@ def clean(texts):
 def texts_to_words(texts):
     """
     Parameters:
-    - `texts`
-    a list of documents
+        - `texts`
+            a list of documents
     
     Yields: a document broken into words and with punctuation removed
     """
@@ -90,12 +90,12 @@ def texts_to_words(texts):
 def lemmatize(texts, allowed_postags=['NOUN', 'ADJ', 'VERB'], lang='english'):
     """
     Parameters:
-    - `texts`
-    a list of documents broken into words
-    - `allowed_postags`
-    a list of the parts of speech to be preserved (e.g ['NOUN', 'ADJ'])
-    - `lang`
-    the language in which the document is written
+        - `texts`
+            a list of documents broken into words
+        - `allowed_postags`
+            a list of the parts of speech to be preserved (e.g ['NOUN', 'ADJ'])
+        - `lang`
+            the language in which the document is written
     
     Returns: a list of documents with words replaced by their lemmas and removed if they do not constitute a part of speech indicated in `allowed_postags`
     """
@@ -106,33 +106,33 @@ def lemmatize(texts, allowed_postags=['NOUN', 'ADJ', 'VERB'], lang='english'):
 
 def make_bigrams(texts, min_count=5, threshold=100):
     """
-        Parameters:
+    Parameters:
         - `texts`
-        a list of documents broken into words
-        
-        Returns: a list of documents with words arranged into bigrams where applicable
-        """
+            a list of documents broken into words
+    
+    Returns: a list of documents with words arranged into bigrams where applicable
+    """
     bigram = Phrases(texts, min_count=min_count, threshold=threshold)
     bigram_mod = Phraser(bigram)
     return [bigram_mod[doc] for doc in texts]
-
+    
 # def make_trigrams(texts):
 #     return make_bigrams(make_bigrams(texts)) I'm not sure if this one behaves correctly
 
 def custom_preprocess(texts, stop_words, allowed_postags, bigrams=True, lang='english'):
     """
     Parameters:
-    - `texts`
-    a list of documents broken into words
-    - `stop_words`
-    a list of words to be removed from each document in `texts`
-    - `allowed_postags`
-    a list of the parts of speech to be preserved (e.g ['NOUN', 'ADJ'])
-    - `bigrams`
-    a boolean indicating whether or not to form bigrams from the words in the texts
-    - `lang`
-    the language in which the texts are written
-    
+        - `texts`
+            a list of documents broken into words
+        - `stop_words`
+            a list of words to be removed from each document in `texts`
+        - `allowed_postags`
+            a list of the parts of speech to be preserved (e.g ['NOUN', 'ADJ'])
+        - `bigrams`
+            a boolean indicating whether or not to form bigrams from the words in the texts
+        - `lang`
+            the language in which the texts are written
+
     
     Returns: a list of preprocessed documents. A result of calling the functions `text_to_words()`, `clean()`, (optionally) `make_bigrams()`, and `lemmatize()` in succession.
     """
@@ -144,8 +144,8 @@ def custom_preprocess(texts, stop_words, allowed_postags, bigrams=True, lang='en
 def dict_corpus(texts):
     """
     Parameters:
-    - `texts`
-    a list of documents broken into words
+        - `texts`
+            a list of documents broken into words
     
     Returns: a dictionary and corpus for use in LDA models
     """
@@ -156,50 +156,50 @@ def dict_corpus(texts):
 # Tuning num_topics hyperparameter
 
 def find_best_model(n_topic_range, texts, id2word, corpus, random_state=42, plot=True, verbose=False):
-        """
-        Parameters:
+    """
+    Parameters:
         - `n_topic_range`
-        a range of values for the `num_topics` parameter of a gensim LDA model to try
+            a range of values for the `num_topics` parameter of a gensim LDA model to try
         - `texts`
-        a list of documents broken into words
+            a list of documents broken into words
         - `id2word`
-        a dictionary containing word encodings
+            a dictionary containing word encodings
         - `corpus`
-        the result of mapping each word in `texts` to its value in `id2word`
-        - `random_state`
-        a random state for use in a gensim LDA model
+            the result of mapping each word in `texts` to its value in `id2word`
+        - `random_state` 
+            a random state for use in a gensim LDA model
         - `plot`
-        a boolean specifying whether or not to plot coherence values against each `num_topics` value
+            a boolean specifying whether or not to plot coherence values against each `num_topics` value
         - `verbose`
-        a boolean specifying whether or not to print updates
-        
-        Returns: a tuple containing the best model, the list of all models attempted, and a list of all coherence values obtained, respectively.
-        """
+            a boolean specifying whether or not to print updates
+    
+    Returns: a tuple containing the best model, the list of all models attempted, and a list of all coherence values obtained, respectively.
+    """
     models = []
     coherence_vals = []
-    
+        
     for n_topics in n_topic_range:
         
         # Print percentage progress
         if verbose:
             diff = max(n_topic_range) - min(n_topic_range)
             print(str(round(100 * (n_topics - min(n_topic_range)) / diff, 1)) + "% done")
-    
+        
         lda_model = LdaModel(corpus=corpus,
-                             id2word=id2word,
-                             num_topics=n_topics,
-                             random_state=random_state,
-                             update_every=1,
-                             chunksize=100,
-                             passes=10,
-                             alpha='auto',
-                             per_word_topics=True
-                             )
-                             co_model = CoherenceModel(lda_model, texts=texts, dictionary=id2word, coherence="c_v")
-                             coherence = co_model.get_coherence()
-                                 
-                                 models.append(lda_model)
-                                 coherence_vals.append(coherence)
+                            id2word=id2word,
+                            num_topics=n_topics,
+                            random_state=random_state,
+                            update_every=1,
+                            chunksize=100,
+                            passes=10,
+                            alpha='auto',
+                            per_word_topics=True
+                            )
+        co_model = CoherenceModel(lda_model, texts=texts, dictionary=id2word, coherence="c_v")
+        coherence = co_model.get_coherence()
+                
+        models.append(lda_model)
+        coherence_vals.append(coherence)
 
     if plot:
         plt.plot(n_topic_range, coherence_vals, 'b')
@@ -212,14 +212,14 @@ def find_best_model(n_topic_range, texts, id2word, corpus, random_state=42, plot
 def visualize_model(model, corpus, id2word):
     """
     Parameters:
-    - `model`
-    a gensim LDA model
-    - `corpus`
-    the corpus on which the model was trained
-    - `id2word`
-    the dictionary on which the model was trained
+        - `model`
+            a gensim LDA model
+        - `corpus`
+            the corpus on which the model was trained
+        - `id2word`
+            the dictionary on which the model was trained
     
-    Returns: a tuple containing the best model, the list of all models attempted, and a list of all coherence values obtained, respectively.
+    Returns: a pyLDAvis visualization
     """
     pyLDAvis.enable_notebook()
     return pyLDAvis.gensim.prepare(model, corpus, id2word)
@@ -230,28 +230,28 @@ def lda_model(province, doc_attrib='source_full_text', start_date=datetime(2020,
     """
     Parameters:
     - `province`
-    the name of the province on whose news releases the LDA model should be trained
+        the name of the province on whose news releases the LDA model should be trained
     - `start_date`
-    the date of the earliest news release to be retrieved
+        the date of the earliest news release to be retrieved
     - `end_date`
-    the date of the most recent news release to be retrieved
+        the date of the most recent news release to be retrieved
     - `bigrams`
-    a boolean indicating whether or not to form bigrams from the words in the texts
+        a boolean indicating whether or not to form bigrams from the words in the texts
     - `allowed_postags`
-    a list of the parts of speech to be preserved (e.g ['NOUN', 'ADJ'])
+        a list of the parts of speech to be preserved (e.g ['NOUN', 'ADJ'])
     - `n_topic_range`
-    a range of values for the `num_topics` parameter of a gensim LDA model to try
+        a range of values for the `num_topics` parameter of a gensim LDA model to try
     - `texts`
-    a list of documents broken into words
+        a list of documents broken into words
     - `random_state`
-    a random state for use in a gensim LDA model
+        a random state for use in a gensim LDA model
     - `plot`
-    a boolean specifying whether or not to plot coherence values against each `num_topics` value
+        a boolean specifying whether or not to plot coherence values against each `num_topics` value
     - `verbose`
-    a boolean specifying whether or not to print updates
-        
+        a boolean specifying whether or not to print updates
+    
     Returns:
-    a dictionary containing the best model, full model list, list of coherence values, the id2word dictionary, and corpus
+        a dictionary containing the best model, full model list, list of coherence values, the id2word dictionary, and corpus
     """
     
     lang = 'french' if province.lower() == 'quebec' else 'english'
@@ -273,10 +273,10 @@ def lda_model(province, doc_attrib='source_full_text', start_date=datetime(2020,
     model, model_list, co_vals = find_best_model(n_topic_range, texts, id2word, corpus, random_state, plot, verbose)
     
     return {
-        'best_model' : model,
-        'model_list' : model_list,
-        'coherence_vals' : co_vals,
-        'id2word' : id2word,
+        'best_model' : model, 
+        'model_list' : model_list, 
+        'coherence_vals' : co_vals, 
+        'id2word' : id2word, 
         'corpus' : corpus,
         'texts' : texts,
         'visualization' : visualize_model(model, corpus, id2word)
