@@ -8,33 +8,38 @@ import feedparser
 from datetime import date
 from datetime import datetime
 import re
+from warnings import warn
 
 _country = 'Canada'
 _src_cat = 'Government Website'
 _columns = ['start_date', 'country', 'region', 'subregion', 'source_url', 'source_category', 'source_title', 'source_full_text']
 
-def _load_ontario(since=datetime(2020, 1, 1), before=datetime.today(), verbose=True):
+def _load_ontario(start_date=datetime(2020, 1, 1), end_date=datetime.today(), verbose=True):
     """
     Parameters: 
-        - `since` 
-            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published since Jan 1 2020 are retrieved
-        - `before` 
+        - `start_date` 
+            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published before Jan 1 2020 are retrieved
+        - `end_date` 
             datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
         - `verbose`
             boolean, whether or not the function should print updates
 
-    Returns: a DataFrame containing news releases from the government of New Brunswick.
+    Returns: a DataFrame containing news releases from the government of Ontario.
     """    
-    today = date.today()
-    today_str = str(today).replace('-', '%2F')
+    if start_date > end_date:
+        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
+        return pd.DataFrame([], columns=_columns)
 
-    base_url = 'https://news.ontario.ca/en/search?content_type=all&utf8=%E2%9C%93&date_range_end=' + today_str + '&date_range_start=2020%2F01%2F01&date_select=desc&page='
-#     targets = [base_url + str(i) for i in range(1,4)]
+    # Start searching at `end_date` date
+    end_str = end_date.strftime('%Y/%m/%d')
+    start_str = start_date.strftime('%Y/%m/%d')
+
+    base_url = 'https://news.ontario.ca/en/search?content_type=all&utf8=%E2%9C%93&date_range_end=' + end_str + '&date_range_start=' + start_str + '&date_select=desc&page='
 
     region = 'Ontario'
     subregion = ''
 
-    if verbose: print("\nLoading {} Releases\n".format(region))
+    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
 
     # Specific structure for news.contario.ca/archive
     rows = []
@@ -57,10 +62,10 @@ def _load_ontario(since=datetime(2020, 1, 1), before=datetime.today(), verbose=T
             title = smallersoup.findAll('a')[0].string
             pub_date = datetime.strptime(smallersoup.time.string.replace('.', ''), "%B %d, %Y %I:%M %p")
             
-            if pub_date < since:
+            if pub_date < start_date:
                 return pd.DataFrame(rows, columns=_columns)
 
-            if pub_date > before: # Articles that follow the `before` parameter are ignored
+            if pub_date > end_date: # Articles that follow the `end_date` parameter are ignored
                 continue
             
             response = requests.get(link)
@@ -72,81 +77,92 @@ def _load_ontario(since=datetime(2020, 1, 1), before=datetime.today(), verbose=T
 
         page += 1
 
-def _load_manitoba(since=datetime(2020, 1, 1), before=datetime.today(), verbose=True):
-    """
- Parameters: 
-        - `since` 
-            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published since Jan 1 2020 are retrieved.
-        - `verbose`
-            boolean, whether or not the function should print updates
-
-    
-    Returns: a DataFrame containing news releases from the government of New Brunswick.
-    """
-    
-    for year in range(datetime.today().year, since.year - 1, -1):
-
-        url_base = 'https://news.gov.mb.ca'
-        targets = [url_base + '/news/index.html?month=' + str(i) + '&year=' + str(year) + '&day=01&bgnG=GO&d=' for i in range(12,0,-1)] # prevents stopping early
-
-        region = 'Manitoba'
-        subregion = ''
-
-        if verbose: print("\nLoading {} Releases\n".format(region))
-        
-        rows = []
-        for target in targets:
-            if verbose: print(target)
-            if target.startswith(url_base): #manitoba
-                response = requests.get(target)
-                soup = BeautifulSoup(response.text, "html.parser")
-                items = soup.findAll("div", {"class": "maincontent"})
-                smallersoup = BeautifulSoup(str(items), "html.parser")
-                for article in smallersoup.findAll('h2'):
-                    a = article.a
-                    relative_link = a['href']
-                    link = url_base + relative_link.split('..')[-1]
-                    title = a.string
-
-                    response = requests.get(link)
-                    linksoup = BeautifulSoup(response.text, "html.parser")
-
-                    date_text = linksoup.findAll("span", {"class": "article_date"})[0].string
-                    pub_date = datetime.strptime(date_text, '%B %d, %Y') # January 31, 2020
-                    
-                    if pub_date < since:
-                        return pd.DataFrame(rows, columns=_columns)
-
-                    if pub_date > before: # Articles that follow the `before` parameter are ignored
-                        continue
-
-                    full_text = linksoup.findAll("div", {"class": ""})[0].text
-
-
-                    row = [pub_date, _country, region, subregion, link, _src_cat, title, full_text]
-                    rows.append(row)
-
-    return pd.DataFrame(rows, columns=_columns)
-
-def _load_british_columbia(since=datetime(2020, 1, 1), before=datetime.today(), verbose=True):
+def _load_manitoba(start_date=datetime(2020, 1, 1), end_date=datetime.today(), verbose=True):
     """
     Parameters: 
-        - `since` 
-            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published since Jan 1 2020 are retrieved
-        - `before` 
+        - `start_date` 
+            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published before Jan 1 2020 are retrieved.
+        - `end_date` 
             datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
         - `verbose`
             boolean, whether or not the function should print updates
 
-    Returns: a DataFrame containing news releases from the government of New Brunswick.
+    
+    Returns: a DataFrame containing news releases from the government of Manitoba.
     """
-        
+
+    if start_date > end_date:
+        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
+        return pd.DataFrame([], columns=_columns)
+    
+    dates_between_str = pd.date_range(start_date, end_date).astype(str)
+    dates_between = pd.unique([datetime.strptime(date_str[:7], '%Y-%m') for date_str in dates_between_str]) # Only year and months (hence [:7])
+
+    url_base = 'https://news.gov.mb.ca'
+    targets = [url_base + '/news/index.html?month=' + str(date.month) + '&year=' + str(date.year) + '&day=01&bgnG=GO&d=' for date in dates_between]
+
+    region = 'Manitoba'
+    subregion = ''
+
+    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
+    
+    rows = []
+    for target in targets:
+        if verbose: print(target)
+        if target.startswith(url_base): #manitoba
+            response = requests.get(target)
+            soup = BeautifulSoup(response.text, "html.parser")
+            items = soup.findAll("div", {"class": "maincontent"})
+            smallersoup = BeautifulSoup(str(items), "html.parser")
+            for article in smallersoup.findAll('h2'):
+                a = article.a
+                relative_link = a['href']
+                link = url_base + relative_link.split('..')[-1]
+                title = a.string
+
+                response = requests.get(link)
+                linksoup = BeautifulSoup(response.text, "html.parser")
+
+                date_text = linksoup.findAll("span", {"class": "article_date"})[0].string
+                pub_date = datetime.strptime(date_text, '%B %d, %Y')
+                
+                if pub_date < start_date:
+                    return pd.DataFrame(rows, columns=_columns)
+
+                if pub_date > end_date: # Articles that follow the `end_date` parameter are ignored
+                    continue
+
+                full_text = linksoup.findAll("div", {"class": ""})[0].text
+
+
+                row = [pub_date, _country, region, subregion, link, _src_cat, title, full_text]
+                rows.append(row)
+
+    return pd.DataFrame(rows, columns=_columns)
+
+def _load_british_columbia(start_date=datetime(2020, 1, 1), end_date=datetime.today(), verbose=True):
+    """
+    Parameters: 
+        - `start_date` 
+            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published before Jan 1 2020 are retrieved
+        - `end_date` 
+            datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
+        - `verbose`
+            boolean, whether or not the function should print updates
+
+    Returns: a DataFrame containing news releases from the government of British Columbia.
+    """
+
+    if start_date > end_date:
+        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
+        return pd.DataFrame([], columns=_columns)
+
     region = 'British Columbia'
     subregion = ''
     
-    if verbose: print("\nLoading {} Releases\n".format(region))
+    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
 
-    query_url = 'https://news.gov.bc.ca/Search?FromDate=01/01/' + str(since.year) + '&Page='
+    query_url = 'https://news.gov.bc.ca/Search?FromDate=' + start_date.strftime('%Y/%m/%d') + '&toDate=' + end_date.strftime('%Y/%m/%d') + '&Page='
     rows = []
     page = 1
     
@@ -170,10 +186,10 @@ def _load_british_columbia(since=datetime(2020, 1, 1), before=datetime.today(), 
             date_text = smallersoup.findAll("div", {"class" : "item-date"})[0].string
             pub_date = datetime.strptime(date_text, '%A, %B %d, %Y %I:%M %p') # Friday, July 10, 2020 12:30 PM
             
-            if pub_date < since:
+            if pub_date < start_date:
                 return pd.DataFrame(rows, columns=_columns)
 
-            if pub_date > before: # Articles that follow the `before` parameter are ignored
+            if pub_date > end_date: # Articles that follow the `end_date` parameter are ignored
                 continue
 
             link = smallersoup.a['href']
@@ -192,12 +208,12 @@ def _load_british_columbia(since=datetime(2020, 1, 1), before=datetime.today(), 
 
         page += 1
 
-def _load_new_brunswick(since=datetime(2020, 1, 1), before=datetime.today(), verbose=True):
+def _load_new_brunswick(start_date=datetime(2020, 1, 1), end_date=datetime.today(), verbose=True):
     """
     Parameters: 
-        - `since` 
-            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published since Jan 1 2020 are retrieved
-        - `before` 
+        - `start_date` 
+            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published before Jan 1 2020 are retrieved
+        - `end_date` 
             datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
         - `verbose`
             boolean, whether or not the function should print updates
@@ -205,11 +221,16 @@ def _load_new_brunswick(since=datetime(2020, 1, 1), before=datetime.today(), ver
     
     Returns: a DataFrame containing news releases from the government of New Brunswick.
     """
+
+    if start_date > end_date:
+        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
+        return pd.DataFrame([], columns=_columns)
+
     
     region = 'New Brunswick'
     sub_region = ''
     
-    if verbose: print("\nLoading {} Releases\n".format(region))
+    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
     
     url_base = "https://www2.gnb.ca/"
     url = url_base + "content/gnb/en/news/recent_news.html?mainContent_par_newslist_start="
@@ -233,11 +254,11 @@ def _load_new_brunswick(since=datetime(2020, 1, 1), before=datetime.today(), ver
                 # Date
                 ar_date = datetime.strptime(ar_date_str.text, "%d %B %Y")
                 
-                if ar_date < since: # only collect data after specified date
+                if ar_date < start_date: # only collect data after specified date
                     if verbose: print("Stopping search at date {}".format(ar_date))
                     return pd.DataFrame(rows, columns=_columns)
 
-                if ar_date > before: # Articles that follow the `before` parameter are ignored
+                if ar_date > end_date: # Articles that follow the `end_date` parameter are ignored
                     continue
 
                 
@@ -253,27 +274,29 @@ def _load_new_brunswick(since=datetime(2020, 1, 1), before=datetime.today(), ver
                 
                 row = [ar_date, _country, region, sub_region, link, _src_cat, title, body]
                 rows.append(row)
-#                 print("{}: {}\n".format(ar_date, title))
-                
-
         start += 25 # articles per page
 
-def _load_nova_scotia(since=datetime(2020, 1, 1), before=datetime.today(), verbose=True):
+def _load_nova_scotia(start_date=datetime(2020, 1, 1), end_date=datetime.today(), verbose=True):
     """
     Parameters: 
-        - `since` 
-            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published since Jan 1 2020 are retrieved
-        - `before` 
+        - `start_date` 
+            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published before Jan 1 2020 are retrieved
+        - `end_date` 
             datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
         - `verbose`
             boolean, whether or not the function should print updates
 
     Returns: a DataFrame containing news releases from the government of Nova Scotia. 
     """
+
+    if start_date > end_date:
+        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
+        return pd.DataFrame([], columns=_columns)
+
     region = 'Nova Scotia'
     sub_region = ''
     
-    if verbose: print("\nLoading {} Releases\n".format(region))
+    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
     
     url_base = "https://novascotia.ca/news"
     page = 1
@@ -296,11 +319,11 @@ def _load_nova_scotia(since=datetime(2020, 1, 1), before=datetime.today(), verbo
                         
             ar_date = datetime.strptime(summary.time.text, "%B %d, %Y - %I:%M %p")
             
-            if ar_date < since:
+            if ar_date < start_date:
                 if verbose: print("Stopping search at date {}".format(ar_date))
                 return pd.DataFrame(rows, columns=_columns)
             
-            if ar_date > before: # Articles that follow the `before` parameter are ignored
+            if ar_date > end_date: # Articles that follow the `end_date` parameter are ignored
                 continue
             
             relative_link = title.a['href'].split('..', 1)[1]
@@ -316,22 +339,27 @@ def _load_nova_scotia(since=datetime(2020, 1, 1), before=datetime.today(), verbo
             
         page += 1
         
-def _load_northwest_territories(since=datetime(2020, 1, 1), before=datetime.today(), verbose=True):
+def _load_northwest_territories(start_date=datetime(2020, 1, 1), end_date=datetime.today(), verbose=True):
     """
     Parameters: 
-        - `since` 
-            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published since Jan 1 2020 are retrieved
-        - `before` 
+        - `start_date` 
+            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published before Jan 1 2020 are retrieved
+        - `end_date` 
             datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
         - `verbose`
             boolean, whether or not the function should print updates
 
     Returns: a DataFrame containing news releases from the government of the Northwest Territories.    
     """
+
+    if start_date > end_date:
+        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
+        return pd.DataFrame([], columns=_columns)
+
     region = 'Northwest Territories'
     sub_region = ''
     
-    if verbose: print("\nLoading {} Releases\n".format(region))
+    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
     
     url_base = "https://www.gov.nt.ca/"
     page = 0
@@ -352,11 +380,11 @@ def _load_northwest_territories(since=datetime(2020, 1, 1), before=datetime.toda
             date_str = boxed_soup.find('span').text
             ar_date = datetime.strptime(date_str, "%B %d, %Y")
             
-            if ar_date < since: 
+            if ar_date < start_date: 
                 if verbose: print("Stopping search at date {}".format(ar_date))
                 return pd.DataFrame(rows, columns=_columns)
 
-            if ar_date > before: # Articles that follow the `before` parameter are ignored
+            if ar_date > end_date: # Articles that follow the `end_date` parameter are ignored
                 continue
             
             title_a = boxed_soup.find('a')
@@ -373,23 +401,28 @@ def _load_northwest_territories(since=datetime(2020, 1, 1), before=datetime.toda
             
         page += 1
         
-def _load_saskatchewan(since=datetime(2020, 1, 1), before=datetime.today(), verbose=True):
+def _load_saskatchewan(start_date=datetime(2020, 1, 1), end_date=datetime.today(), verbose=True):
     """
     Parameters: 
-        - `since` 
-            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published since Jan 1 2020 are retrieved
-        - `before` 
+        - `start_date` 
+            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published before Jan 1 2020 are retrieved
+        - `end_date` 
             datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
         - `verbose`
             boolean, whether or not the function should print updates
 
     Returns: a DataFrame containing news releases from the government of Saskatchewan.
     """
+
+    if start_date > end_date:
+        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
+        return pd.DataFrame([], columns=_columns)
+
     
     region = 'Saskatchewan'
     sub_region = ''
     
-    if verbose: print("\nLoading {} Releases\n".format(region))
+    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
     
     url_base = "https://www.saskatchewan.ca/government/news-and-media?page="
     page = 1
@@ -412,11 +445,11 @@ def _load_saskatchewan(since=datetime(2020, 1, 1), before=datetime.today(), verb
             date_str = item.time['datetime']
             ar_date = datetime.strptime(date_str, "%Y-%m-%d")
             
-            if ar_date < since: 
+            if ar_date < start_date: 
                 if verbose: print("Stopping search at date {}".format(ar_date))
                 return pd.DataFrame(rows, columns=_columns)
 
-            if ar_date > before: # Articles that follow the `before` parameter are ignored
+            if ar_date > end_date: # Articles that follow the `end_date` parameter are ignored
                 continue
             
             title = item.a.text
@@ -430,25 +463,29 @@ def _load_saskatchewan(since=datetime(2020, 1, 1), before=datetime.today(), verb
             
         page += 1
         
-def _load_nunavut(since=datetime(2020, 1, 1), before=datetime.today(), verbose=True):
+def _load_nunavut(start_date=datetime(2020, 1, 1), end_date=datetime.today(), verbose=True):
     """
     Parameters: 
-        - `since` 
-            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published since Jan 1 2020 are retrieved
-        - `before` 
+        - `start_date` 
+            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published before Jan 1 2020 are retrieved
+        - `end_date` 
             datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
         - `verbose`
             boolean, whether or not the function should print updates
 
     Returns: a DataFrame containing news releases from the government of Nunavut.
     
-    Parameters: datetime object, the date of the earliest news release to be retrieved. By default, only the releases published since Jan 1 2020 are retrieved.
+    Parameters: datetime object, the date of the earliest news release to be retrieved. By default, only the releases published before Jan 1 2020 are retrieved.
     """
     
+    if start_date > end_date:
+        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
+        return pd.DataFrame([], columns=_columns)
+
     region = 'Nunavut'
     sub_region = ''
     
-    if verbose: print("\nLoading {} Releases\n".format(region))
+    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
     
     url_base = "https://gov.nu.ca"
     page = 0
@@ -473,11 +510,11 @@ def _load_nunavut(since=datetime(2020, 1, 1), before=datetime.today(), verbose=T
             date_str = div_soup.find('span', class_="date-display-single").text
             ar_date = datetime.strptime(date_str, "%d %B %Y")
             
-            if ar_date < since: 
+            if ar_date < start_date: 
                 if verbose: print("Stopping search at date {}".format(ar_date))
                 return pd.DataFrame(rows, columns=_columns)
 
-            if ar_date > before: # Articles that follow the `before` parameter are ignored
+            if ar_date > end_date: # Articles that follow the `end_date` parameter are ignored
                 continue
             
             a = div_soup.find('a')
@@ -492,12 +529,12 @@ def _load_nunavut(since=datetime(2020, 1, 1), before=datetime.today(), verbose=T
             
         page += 1
         
-def _load_yukon(since=datetime(2020, 1, 1), before=datetime.today(), verbose=True):
+def _load_yukon(start_date=datetime(2020, 1, 1), end_date=datetime.today(), verbose=True):
     """
     Parameters: 
-        - `since` 
-            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published since Jan 1 2020 are retrieved
-        - `before` 
+        - `start_date` 
+            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published before Jan 1 2020 are retrieved
+        - `end_date` 
             datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
         - `verbose`
             boolean, whether or not the function should print updates
@@ -505,10 +542,14 @@ def _load_yukon(since=datetime(2020, 1, 1), before=datetime.today(), verbose=Tru
     Returns: a DataFrame containing news releases from the government of the Yukon.
     """
     
+    if start_date > end_date:
+        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
+        return pd.DataFrame([], columns=_columns)
+
     region = 'Yukon'
     sub_region = ''
     
-    if verbose: print("\nLoading {} Releases\n".format(region))
+    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
     
     url_base = "https://yukon.ca"
     page = 0
@@ -533,11 +574,11 @@ def _load_yukon(since=datetime(2020, 1, 1), before=datetime.today(), verbose=Tru
             date_str = div_soup.find('small').text
             ar_date = datetime.strptime(date_str, "%B %d, %Y")
             
-            if ar_date < since: 
+            if ar_date < start_date: 
                 if verbose: print("Stopping search at date {}".format(ar_date))
                 return pd.DataFrame(rows, columns=_columns)
             
-            if ar_date > before: # Articles that follow the `before` parameter are ignored
+            if ar_date > end_date: # Articles that follow the `end_date` parameter are ignored
                 continue
 
             a = div_soup.find('a')
@@ -551,12 +592,12 @@ def _load_yukon(since=datetime(2020, 1, 1), before=datetime.today(), verbose=Tru
             
         page += 1
         
-def _load_pei(since=datetime(2020, 1, 1), before=datetime.today(), verbose=True):
+def _load_pei(start_date=datetime(2020, 1, 1), end_date=datetime.today(), verbose=True):
     """
     Parameters: 
-        - `since` 
-            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published since Jan 1 2020 are retrieved
-        - `before` 
+        - `start_date` 
+            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published before Jan 1 2020 are retrieved
+        - `end_date` 
             datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
         - `verbose`
             boolean, whether or not the function should print updates
@@ -564,10 +605,15 @@ def _load_pei(since=datetime(2020, 1, 1), before=datetime.today(), verbose=True)
     Returns: a DataFrame containing news releases from the government of Prince Edward Island.
     """
     
+    if start_date > end_date:
+        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
+        return pd.DataFrame([], columns=_columns)
+
+
     region = 'Prince Edward Island'
     sub_region = ''
     
-    if verbose: print("\nLoading {} Releases\n".format(region))
+    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
     
     url_base = "https://www.princeedwardisland.ca"
     page = 0
@@ -589,11 +635,11 @@ def _load_pei(since=datetime(2020, 1, 1), before=datetime.today(), verbose=True)
             date_str = div_soup.find('div', class_="date").text
             ar_date = datetime.strptime(date_str, "%A, %B %d, %Y")
             
-            if ar_date < since: 
+            if ar_date < start_date: 
                 if verbose: print("Stopping search at date {}".format(ar_date))
                 return pd.DataFrame(rows, columns=_columns)
             
-            if ar_date > before: # Articles that follow the `before` parameter are ignored
+            if ar_date > end_date: # Articles that follow the `end_date` parameter are ignored
                 continue
 
             a = div_soup.find('a')
@@ -608,25 +654,29 @@ def _load_pei(since=datetime(2020, 1, 1), before=datetime.today(), verbose=True)
             
         page += 1
         
-def _load_alberta(since=datetime(2020, 1, 1), before=datetime.today(), verbose=True):
+def _load_alberta(start_date=datetime(2020, 1, 1), end_date=datetime.today(), verbose=True):
     """
     Parameters: 
-        - `since` 
-            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published since Jan 1 2020 are retrieved
-        - `before` 
+        - `start_date` 
+            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published before Jan 1 2020 are retrieved
+        - `end_date` 
             datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
         - `verbose`
             boolean, whether or not the function should print updates
 
     Returns: a DataFrame containing news releases from the government of Alberta.
     """
-    
+
+    if start_date > end_date:
+        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
+        return pd.DataFrame([], columns=_columns)
+
     region = 'Alberta'
     sub_region = ''
     
-    if verbose: print("\nLoading {} Releases\n".format(region))
+    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
     
-    days_back = (datetime.today() - since).days
+    days_back = (datetime.today() - start_date).days
     url = "https://www.alberta.ca/NewsRoom/newsroom.cfm?numDaysBack=" + str(days_back + 1)
     
     rows = []
@@ -642,9 +692,11 @@ def _load_alberta(since=datetime(2020, 1, 1), before=datetime.today(), verbose=T
         
         ar_date = datetime.strptime(date, "%a, %d %b %Y %H:%M:%S -0600")
 
-        if ar_date > before: # Articles that follow the `before` parameter are ignored
+        if ar_date > end_date: # Articles that follow the `end_date` parameter are ignored
              continue
         
+        if verbose: print('Searching date ' + ar_date.strftime('%B %d, %Y'))
+
         ar_page_soup = BeautifulSoup(requests.get(link).content, 'html.parser')
         ar_main = ar_page_soup.find('main')
         body_soup = BeautifulSoup(str(ar_main), 'html.parser')
@@ -655,23 +707,28 @@ def _load_alberta(since=datetime(2020, 1, 1), before=datetime.today(), verbose=T
                 
     return pd.DataFrame(rows, columns=_columns)
 
-def _load_quebec(since=datetime(2020, 1, 1), before=datetime.today(), verbose=True):
+def _load_quebec(start_date=datetime(2020, 1, 1), end_date=datetime.today(), verbose=True):
     """
     Parameters: 
-        - `since` 
-            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published since Jan 1 2020 are retrieved
-        - `before` 
+        - `start_date` 
+            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published before Jan 1 2020 are retrieved
+        - `end_date` 
             datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
         - `verbose`
             boolean, whether or not the function should print updates
 
     Returns: a DataFrame containing news releases from the government of Quebec.
     """
+
+    if start_date > end_date:
+        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
+        return pd.DataFrame([], columns=_columns)
+
     
     region = 'Quebec'
     sub_region = ''
     
-    if verbose: print("\nLoading {} Releases\n".format(region))
+    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
     
     url_base = "http://www.fil-information.gouv.qc.ca/Pages/Articles.aspx?lang=en&Page="
     page = 1
@@ -691,12 +748,12 @@ def _load_quebec(since=datetime(2020, 1, 1), before=datetime.today(), verbose=Tr
         for section in sections:
             date_str = section.time['datetime']
             ar_date = datetime.strptime(date_str, "%Y-%m-%d")
-            
-            if ar_date < since:
+                    
+            if ar_date < start_date:
                 if verbose: print("Stopping search at date {}".format(ar_date))
                 return pd.DataFrame(rows, columns=_columns)
             
-            if ar_date > before: # Articles that follow the `before` parameter are ignored
+            if ar_date > end_date: # Articles that follow the `end_date` parameter are ignored
                 continue
 
             
@@ -714,12 +771,12 @@ def _load_quebec(since=datetime(2020, 1, 1), before=datetime.today(), verbose=Tr
             
         page += 1
 
-def _load_newfoundland(since=datetime(2020, 1, 1), before=datetime.today(), verbose=True):
+def _load_newfoundland(start_date=datetime(2020, 1, 1), end_date=datetime.today(), verbose=True):
     """
     Parameters: 
-        - `since` 
-            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published since Jan 1 2020 are retrieved
-        - `before` 
+        - `start_date` 
+            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published before Jan 1 2020 are retrieved
+        - `end_date` 
             datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
         - `verbose`
             boolean, whether or not the function should print updates
@@ -727,16 +784,20 @@ def _load_newfoundland(since=datetime(2020, 1, 1), before=datetime.today(), verb
     Returns: a DataFrame containing news releases from the government of Newfoundland.
     """
     
+    if start_date > end_date:
+        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
+        return pd.DataFrame([], columns=_columns)
+
     region = 'Newfoundland and Labrador'
     sub_region = ''
     
-    if verbose: print("\nLoading {} Releases\n".format(region))
+    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
     
     current_year = datetime.today().year
     
     rows = []
     
-    for year in range(current_year, since.year - 1, -1): # Not likely to be relevant in the near future
+    for year in range(current_year, start_date.year - 1, -1): # Not likely to be relevant in the near future
         url = "https://www.gov.nl.ca/releases/r/?ny=" + str(year) + "&nm=&ntype=&ndept="
 
         http = urllib3.PoolManager()
@@ -752,10 +813,10 @@ def _load_newfoundland(since=datetime(2020, 1, 1), before=datetime.today(), verb
             ar_date = datetime.strptime(date.text + " " + str(year), "%B %d %Y")
             if verbose: print("Searching date: " + ar_date.strftime("%B %d %Y"))
 
-            if ar_date < since:
+            if ar_date < start_date:
                 return pd.DataFrame(rows, columns=_columns)
 
-            if ar_date > before: # Articles that follow the `before` parameter are ignored
+            if ar_date > end_date: # Articles that follow the `end_date` parameter are ignored
                 continue
                         
             for article in ar_list:
@@ -771,13 +832,15 @@ def _load_newfoundland(since=datetime(2020, 1, 1), before=datetime.today(), verb
     
     return pd.DataFrame(rows, columns=_columns)
 
-def _load_province(province, since=datetime(2020, 1, 1), before=datetime.today(), verbose=True):
+def _load_province(province, start_date=datetime(2020, 1, 1), end_date=datetime.today(), verbose=True):
     """
     Parameters: 
         - `province`
             string, represents the name of the province or territory whose releases are to be retrieved
-        - `since` 
-            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published since Jan 1 2020 are retrieved.
+        - `start_date` 
+            datetime object, the date of the earliest news release to be retrieved. By default, only the releases published before Jan 1 2020 are retrieved
+         - `end_date` 
+            datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
         - `verbose`
             boolean, whether or not the function should print updates
 
@@ -798,7 +861,7 @@ def _load_province(province, since=datetime(2020, 1, 1), before=datetime.today()
             'saskatchewan' : _load_saskatchewan, 
             'yukon' : _load_yukon,
            }
-    return switcher[province.lower()](since, before, verbose)
+    return switcher[province.lower()](start_date=start_date, end_date=end_date, verbose=verbose)
 
 def _csv_path(province):
     """
@@ -806,233 +869,103 @@ def _csv_path(province):
     """
     return 'sources/' + province.replace(' ', '').lower() + '.csv'
 
-def load_province(province, before=datetime.today(), verbose=True):
+def load_province(province, start_date=None, end_date=datetime.today(), update_csv=False, verbose=True):
     """
     Parameters: 
         - `province`
             string, the name of the province or territory to be loaded
-         - `before` 
+        - `start_date` 
+            datetime object, the date of the earliest news release to be retrieved. By default, this is set to None, which indicates that the program should begin searching from the last possible date in the CSV
+         - `end_date` 
             datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
+        - `update_csv`
+            boolean, whether or not the results from the search should be saved to a CSV. By default, this is set to False.
         - `verbose`
             boolean, whether or not the function should print updates
 
     Returns: a DataFrame containing news releases from the government of the specified province or territory.
     """
+
     try:
         province_df = pd.read_csv(_csv_path(province))
-        province_df = province_df.drop('Unnamed: 0', axis=1) 
+        province_df = province_df.drop('Unnamed: 0', axis=1)
         
         province_df["start_date"] = pd.to_datetime(province_df["start_date"])
         
-        largest_date = province_df["start_date"].max()            
-        new_additions = _load_province(province, since=largest_date, verbose=verbose)  
+        # Get dates later than in the CSV, unless the `start_date` parameter is not None and gives a later date on which to begin searching. If it's None, a default value of Jan 1 2020 is used.
+        largest_date = province_df["start_date"].max()    
+        late_additions = _load_province(province, start_date=max(largest_date, start_date or datetime(2020, 1, 1)), end_date=end_date, verbose=verbose) # Incorrect `end_date` type
+        df = late_additions.append(province_df)
+
+        # Get dates earlier than in the CSV, unless the `end_date` parameter gives an earlier date on which to stop searching
+        # end_date=datetime.today() sets the parameter to a default value and allows the program to avoid coslty searches before beginning date.
+        if start_date is not None:
+            if start_date < datetime(2020, 1, 1):
+                warn('WARNING: Going back further than government news websites extend may lead to unexpected behaviour.')
+
+            earliest_date = province_df["start_date"].min()
+            early_additions = _load_province(province, start_date=start_date, end_date=min(end_date, earliest_date), verbose=verbose)  
+            df = df.append(early_additions)
         
-        df = new_additions.append(province_df).drop_duplicates(['source_full_text', 'source_url'])
+        df = df.drop_duplicates(['source_full_text'])
     except:
-        if verbose: print('Failed to find CSV path')
-        df = _load_province(province, verbose=verbose)
+        print("Failed to find CSV at ", _csv_path(province))
+        df = _load_province(province, start_date=(start_date or datetime(2020, 1, 1)), end_date=end_date, verbose=verbose)
         
-    df.to_csv(_csv_path(province))
+    if update_csv:
+        df.to_csv(_csv_path(province))
+    
     return df
 
-def load_alberta(before=datetime.today(), verbose=True):
+def load_provinces(start_date=None, end_date=datetime.today(), update_csv=False, verbose=False):
     """
     Parameters: 
-        - `before` 
-            datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
+        - `start_date` 
+            datetime object, the date of the earliest news release to be retrieved. By default, this is set to None, which indicates that the program should begin searching from the last possible date in the CSV
+        - `end_date` 
+            datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date.
+        - `update_csv`
+            boolean, whether or not the results from the search should be saved to a CSV. By default, this is set to False.
         - `verbose`
-            boolean, whether or not the function should print updates
-
-
-    Returns: a DataFrame containing news releases from the government of Alberta.
-    """
-    return load_province('alberta', before, verbose)
-
-def load_british_columbia(before=datetime.today(), verbose=True):
-    """
-    Parameters: 
-        - `before` 
-            datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
-        - `verbose`
-            boolean, whether or not the function should print updates
-
-    Returns: a DataFrame containing news releases from the government of British Columbia.
-    """
-    return load_province('british columbia', before, verbose)
-
-def load_manitoba(before=datetime.today(), verbose=True):
-    """
-    Parameters: 
-        - `before` 
-            datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
-        - `verbose`
-            boolean, whether or not the function should print updates
-
-    Returns: a DataFrame containing news releases from the government of Manitoba.
-    """
-    return load_province('manitoba', before, verbose)
-
-def load_new_brunswick(before=datetime.today(), verbose=True):
-    """
-    Parameters: 
-        - `before` 
-            datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
-        - `verbose`
-            boolean, whether or not the function should print updates
-
-    Returns: a DataFrame containing news releases from the government of New Brunswick.
-    """
-    return load_province('new brunswick', before, verbose)
-
-def load_newfoundland(before=datetime.today(), verbose=True):
-    """
-    Parameters: 
-        - `before` 
-            datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
-        - `verbose`
-            boolean, whether or not the function should print updates
-
-    Returns: a DataFrame containing news releases from the government of Newfoundland.
-    """
-    return load_province('newfoundland', before, verbose)
-
-def load_northwest_territories(before=datetime.today(), verbose=True):
-    """
-    Parameters: 
-        - `before` 
-            datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
-        - `verbose`
-            boolean, whether or not the function should print updates
-
-    Returns: a DataFrame containing news releases from the government of the Northwest Territories.
-    """
-    return load_province('northwest territories', before, verbose)
-
-def load_nova_scotia(before=datetime.today(), verbose=True):
-    """
-    Parameters: 
-        - `before` 
-            datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
-        - `verbose`
-            boolean, whether or not the function should print updates
-
-    Returns: a DataFrame containing news releases from the government of Nova Scotia.
-    """
-    return load_province('nova scotia', before, verbose)
-
-def load_nunavut(before=datetime.today(), verbose=True):
-    """
-    Parameters: 
-        - `before` 
-            datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
-        - `verbose`
-            boolean, whether or not the function should print updates
-
-    Returns: a DataFrame containing news releases from the government of Nunavut.
-    """
-    return load_province('nunavut', before, verbose)
-
-def load_ontario(before=datetime.today(), verbose=True):
-    """
-    Parameters: 
-        - `before` 
-            datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
-        - `verbose`
-            boolean, whether or not the function should print updates
-
-    Returns: a DataFrame containing news releases from the government of Ontario.
-    """
-    return load_province('ontario', before, verbose)
-
-def load_pei(before=datetime.today(), verbose=True):
-    """
-    Parameters: 
-        - `before` 
-            datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
-        - `verbose`
-            boolean, whether or not the function should print updates
-
-    Returns: a DataFrame containing news releases from the government of Prince Edward Island.
-    """
-    return load_province('pei', before, verbose)
-
-def load_quebec(before=datetime.today(), verbose=True):
-    """
-    Parameters: 
-        - `before` 
-            datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
-        - `verbose`
-            boolean, whether or not the function should print updates
-
-    Returns: a DataFrame containing news releases from the government of Quebec.
-    """
-    return load_province('quebec', before, verbose)
-
-def load_saskatchewan(before=datetime.today(), verbose=True):
-    """
-    Parameters: 
-        - `before` 
-            datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
-        - `verbose`
-            boolean, whether or not the function should print updates
-
-    Returns: a DataFrame containing news releases from the government of Saskatchewan.
-    """
-    return load_province('saskatchewan', before, verbose)
-
-def load_yukon(before=datetime.today(), verbose=True):
-    """
-    Parameters: 
-        - `before` 
-            datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
-        - `verbose`
-            boolean, whether or not the function should print updates
-
-    Returns: a DataFrame containing news releases from the government of Yukon.
-    """
-    return load_province('yukon', before, verbose)
-
-def load_provinces(before=datetime.today(), verbose=False):
-    """
-    Parameters: 
-        - `before` 
-            datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
-        - `verbose`
-            boolean, whether or not the function should print updates (False by default)
+            boolean, whether or not the function should print updates. By default, this is set to False.
 
     Returns: a dictionary mapping the names of provinces and territories to DataFrames containing information about their new releases.
     """
-    return {'alberta' : load_alberta(before, verbose), 
-            'british columbia' : load_british_columbia(before, verbose), 
-            'manitoba' : load_manitoba(before, verbose), 
-            'new brunswick' : load_new_brunswick(before, verbose), 
-            'newfoundland' : load_newfoundland(before, verbose),
-            'northwest territories' : load_northwest_territories(before, verbose), 
-            'nova scotia' : load_nova_scotia(before, verbose), 
-            'nunavut' : load_nunavut(before, verbose), 
-            'ontario' : load_ontario(before, verbose), 
-            'pei' : load_pei(before, verbose), 
-            'quebec' : load_quebec(before, verbose), 
-            'saskatchewan' : load_saskatchewan(before, verbose), 
-            'yukon' : load_yukon(before, verbose),
+
+    return {'alberta' : load_province('alberta', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose), 
+            'british columbia' : load_province('british columbia', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose), 
+            'manitoba' : load_province('manitoba', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose), 
+            'new brunswick' : load_province('new brunswick', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose), 
+            'newfoundland' : load_province('newfoundland', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose),
+            'northwest territories' : load_province('northwest territories', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose), 
+            'nova scotia' : load_province('nova scotia', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose), 
+            'nunavut' : load_province('nunavut', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose), 
+            'ontario' : load_province('ontario', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose), 
+            'pei' : load_province('pei', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose), 
+            'quebec' : load_province('quebec', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose), 
+            'saskatchewan' : load_province('saskatchewan', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose), 
+            'yukon' : load_province('yukon', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose),
            }
 
-def load_all(before=datetime.today(), verbose=False):
+def load_all(start_date=None, end_date=datetime.today(), update_csv=False, verbose=False):
     """
     Parameters: 
-        - `before` 
+        - `start_date` 
+            datetime object, the date of the earliest news release to be retrieved. By default, this is set to None, which indicates that the program should begin searching from the last possible date in the CSV
+        - `end_date` 
             datetime object, the date of the latest news release to be retrieved. By default, this is set to the current date
+        - `update_csv`
+            boolean, whether or not the results from the search should be saved to a CSV. By default, this is set to False.
         - `verbose`
             boolean, whether or not the function should print updates (False by default)
 
-    Returns: a DataFrame containing the information from all CSVs.
+    Returns: a DataFrame containing the information from all provinces and territories.
     """
 
     full_df = pd.DataFrame([], columns=_columns)
-    province_dict = load_provinces(before, verbose)
+    province_dict = load_provinces(start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose)
 
-    for province in province_dict:
-        df = province_dict[province]
+    for df in province_dict.values():
         full_df = full_df.append(df)
     
     return full_df
