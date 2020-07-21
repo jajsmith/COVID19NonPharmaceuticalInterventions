@@ -811,13 +811,14 @@ def _load_newfoundland(start_date=datetime(2020, 1, 1), end_date=datetime.today(
 
         for date, ar_list in zip(dates, ar_lists):
             ar_date = datetime.strptime(date.text + " " + str(year), "%B %d %Y")
-            if verbose: print("Searching date: " + ar_date.strftime("%B %d %Y"))
 
             if ar_date < start_date:
                 return pd.DataFrame(rows, columns=_columns)
 
             if ar_date > end_date: # Articles that follow the `end_date` parameter are ignored
                 continue
+
+            if verbose: print("Searching date: " + ar_date.strftime("%B %d %Y"))
                         
             for article in ar_list:
                 title = article.a.text
@@ -861,6 +862,11 @@ def _load_province(province, start_date=datetime(2020, 1, 1), end_date=datetime.
             'saskatchewan' : _load_saskatchewan, 
             'yukon' : _load_yukon,
            }
+
+    if province not in switcher:
+        warn("Province \'{}\' not recognized".format(province))
+        return None
+
     return switcher[province.lower()](start_date=start_date, end_date=end_date, verbose=verbose)
 
 def _csv_path(province):
