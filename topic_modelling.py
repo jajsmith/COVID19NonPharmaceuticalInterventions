@@ -343,7 +343,7 @@ def lda_from_list(ls, lang='english', bigram=True, allowed_postags=['NOUN', 'VER
         a boolean specifying whether or not to print updates
     
     Returns:
-        a dictionary containing the best model, full model list, list of coherence values, the id2word dictionary, and corpus
+        a dictionary containing the best model, full model list, list of coherence values, the id2word dictionary, corpus, and texts
     """
     
     find_best_model = find_best_model_cv if use_coherence else find_best_model_log_perp
@@ -373,8 +373,7 @@ def lda_from_list(ls, lang='english', bigram=True, allowed_postags=['NOUN', 'VER
         'coherence_vals' : co_vals, 
         'id2word' : id2word, 
         'corpus' : corpus,
-        'texts' : texts,
-        'visualization' : visualize_model(model, corpus, id2word)
+        'texts' : texts
     }
 
 def lda_from_df(df, doc_attrib='source_full_text', lang='english', bigram=True, allowed_postags=['NOUN', 'VERB', 'ADJ'], stopword_extensions=[], n_topic_range=range(2, 40, 3), threshold=None, use_coherence=True, random_state=42, plot=True, verbose=False):
@@ -406,7 +405,7 @@ def lda_from_df(df, doc_attrib='source_full_text', lang='english', bigram=True, 
         a boolean specifying whether or not to print updates
     
     Returns:
-        a dictionary containing the best model, full model list, list of coherence values, the id2word dictionary, and corpus
+        a dictionary containing the best model, full model list, list of coherence values, the id2word dictionary, corpus, and texts
     """
     
     return lda_from_list(df[doc_attrib], 
@@ -452,7 +451,7 @@ def lda_from_province(province, doc_attrib='source_full_text', start_date=dateti
         a boolean specifying whether or not to print updates
     
     Returns:
-        a dictionary containing the best model, full model list, list of coherence values, the id2word dictionary, and corpus
+        a dictionary containing the best model, full model list, list of coherence values, the id2word dictionary, corpus, and texts
     """
     
     lang = 'french' if province.lower() == 'quebec' else 'english'
