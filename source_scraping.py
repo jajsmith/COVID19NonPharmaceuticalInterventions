@@ -26,9 +26,6 @@ def _load_ontario(start_date=datetime(2020, 1, 1), end_date=datetime.today(), ve
 
     Returns: a DataFrame containing news releases from the government of Ontario.
     """    
-    if start_date > end_date:
-        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
-        return pd.DataFrame([], columns=_columns)
 
     # Start searching at `end_date` date
     end_str = end_date.strftime('%Y/%m/%d')
@@ -38,8 +35,6 @@ def _load_ontario(start_date=datetime(2020, 1, 1), end_date=datetime.today(), ve
 
     region = 'Ontario'
     subregion = ''
-
-    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
 
     # Specific structure for news.contario.ca/archive
     rows = []
@@ -90,21 +85,14 @@ def _load_manitoba(start_date=datetime(2020, 1, 1), end_date=datetime.today(), v
     
     Returns: a DataFrame containing news releases from the government of Manitoba.
     """
-
-    if start_date > end_date:
-        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
-        return pd.DataFrame([], columns=_columns)
     
-    dates_between_str = pd.date_range(start_date, end_date).astype(str)
-    dates_between = pd.unique([datetime.strptime(date_str[:7], '%Y-%m') for date_str in dates_between_str]) # Only year and months (hence [:7])
+    dates_between = pd.date_range(start=start_date end=end_date, freq="MS")
 
     url_base = 'https://news.gov.mb.ca'
     targets = [url_base + '/news/index.html?month=' + str(date.month) + '&year=' + str(date.year) + '&day=01&bgnG=GO&d=' for date in dates_between]
 
     region = 'Manitoba'
     subregion = ''
-
-    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
     
     rows = []
     for target in targets:
@@ -153,14 +141,8 @@ def _load_british_columbia(start_date=datetime(2020, 1, 1), end_date=datetime.to
     Returns: a DataFrame containing news releases from the government of British Columbia.
     """
 
-    if start_date > end_date:
-        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
-        return pd.DataFrame([], columns=_columns)
-
     region = 'British Columbia'
     subregion = ''
-    
-    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
 
     query_url = 'https://news.gov.bc.ca/Search?FromDate=' + start_date.strftime('%Y/%m/%d') + '&toDate=' + end_date.strftime('%Y/%m/%d') + '&Page='
     rows = []
@@ -179,12 +161,10 @@ def _load_british_columbia(start_date=datetime(2020, 1, 1), end_date=datetime.to
         for article in items:
             smallersoup = BeautifulSoup(str(article), "html.parser")
 
-            #for article in smallersoup.findAll('div'):
-
             title = smallersoup.a.string
 
             date_text = smallersoup.findAll("div", {"class" : "item-date"})[0].string
-            pub_date = datetime.strptime(date_text, '%A, %B %d, %Y %I:%M %p') # Friday, July 10, 2020 12:30 PM
+            pub_date = datetime.strptime(date_text, '%A, %B %d, %Y %I:%M %p')
             
             if pub_date < start_date:
                 return pd.DataFrame(rows, columns=_columns)
@@ -221,16 +201,9 @@ def _load_new_brunswick(start_date=datetime(2020, 1, 1), end_date=datetime.today
     
     Returns: a DataFrame containing news releases from the government of New Brunswick.
     """
-
-    if start_date > end_date:
-        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
-        return pd.DataFrame([], columns=_columns)
-
     
     region = 'New Brunswick'
     sub_region = ''
-    
-    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
     
     url_base = "https://www2.gnb.ca/"
     url = url_base + "content/gnb/en/news/recent_news.html?mainContent_par_newslist_start="
@@ -250,25 +223,23 @@ def _load_new_brunswick(start_date=datetime(2020, 1, 1), end_date=datetime.today
             small_soup = BeautifulSoup(str(article), 'html.parser')
             ar_date_str = small_soup.find('span', class_="post_date")
             
-            if ar_date_str: # ensure list entry corresponds to dated article
-                # Date
+            if ar_date_str:
                 ar_date = datetime.strptime(ar_date_str.text, "%d %B %Y")
                 
-                if ar_date < start_date: # only collect data after specified date
+                if ar_date < start_date:
                     if verbose: print("Stopping search at date {}".format(ar_date))
                     return pd.DataFrame(rows, columns=_columns)
 
-                if ar_date > end_date: # Articles that follow the `end_date` parameter are ignored
+                if ar_date > end_date:
                     continue
 
-                
                 a = article.a
-                # Title
                 title = a.text
-                # Body
+
                 relative_link = a['href']
                 link = url_base + relative_link
                 article_page = requests.get(link)
+
                 body_soup = BeautifulSoup(article_page.content, 'html.parser')
                 body = body_soup.find('div', class_="articleBody").text
                 
@@ -289,14 +260,8 @@ def _load_nova_scotia(start_date=datetime(2020, 1, 1), end_date=datetime.today()
     Returns: a DataFrame containing news releases from the government of Nova Scotia. 
     """
 
-    if start_date > end_date:
-        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
-        return pd.DataFrame([], columns=_columns)
-
     region = 'Nova Scotia'
     sub_region = ''
-    
-    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
     
     url_base = "https://novascotia.ca/news"
     page = 1
@@ -352,14 +317,8 @@ def _load_northwest_territories(start_date=datetime(2020, 1, 1), end_date=dateti
     Returns: a DataFrame containing news releases from the government of the Northwest Territories.    
     """
 
-    if start_date > end_date:
-        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
-        return pd.DataFrame([], columns=_columns)
-
     region = 'Northwest Territories'
-    sub_region = ''
-    
-    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
+    sub_region = '' 
     
     url_base = "https://www.gov.nt.ca/"
     page = 0
@@ -413,16 +372,9 @@ def _load_saskatchewan(start_date=datetime(2020, 1, 1), end_date=datetime.today(
 
     Returns: a DataFrame containing news releases from the government of Saskatchewan.
     """
-
-    if start_date > end_date:
-        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
-        return pd.DataFrame([], columns=_columns)
-
     
     region = 'Saskatchewan'
     sub_region = ''
-    
-    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
     
     url_base = "https://www.saskatchewan.ca/government/news-and-media?page="
     page = 1
@@ -477,15 +429,9 @@ def _load_nunavut(start_date=datetime(2020, 1, 1), end_date=datetime.today(), ve
     
     Parameters: datetime object, the date of the earliest news release to be retrieved. By default, only the releases published before Jan 1 2020 are retrieved.
     """
-    
-    if start_date > end_date:
-        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
-        return pd.DataFrame([], columns=_columns)
 
     region = 'Nunavut'
     sub_region = ''
-    
-    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
     
     url_base = "https://gov.nu.ca"
     page = 0
@@ -541,15 +487,9 @@ def _load_yukon(start_date=datetime(2020, 1, 1), end_date=datetime.today(), verb
 
     Returns: a DataFrame containing news releases from the government of the Yukon.
     """
-    
-    if start_date > end_date:
-        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
-        return pd.DataFrame([], columns=_columns)
 
     region = 'Yukon'
     sub_region = ''
-    
-    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
     
     url_base = "https://yukon.ca"
     page = 0
@@ -604,16 +544,9 @@ def _load_pei(start_date=datetime(2020, 1, 1), end_date=datetime.today(), verbos
 
     Returns: a DataFrame containing news releases from the government of Prince Edward Island.
     """
-    
-    if start_date > end_date:
-        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
-        return pd.DataFrame([], columns=_columns)
-
 
     region = 'Prince Edward Island'
     sub_region = ''
-    
-    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
     
     url_base = "https://www.princeedwardisland.ca"
     page = 0
@@ -667,14 +600,8 @@ def _load_alberta(start_date=datetime(2020, 1, 1), end_date=datetime.today(), ve
     Returns: a DataFrame containing news releases from the government of Alberta.
     """
 
-    if start_date > end_date:
-        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
-        return pd.DataFrame([], columns=_columns)
-
     region = 'Alberta'
     sub_region = ''
-    
-    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
     
     days_back = (datetime.today() - start_date).days
     url = "https://www.alberta.ca/NewsRoom/newsroom.cfm?numDaysBack=" + str(days_back + 1)
@@ -719,16 +646,9 @@ def _load_quebec(start_date=datetime(2020, 1, 1), end_date=datetime.today(), ver
 
     Returns: a DataFrame containing news releases from the government of Quebec.
     """
-
-    if start_date > end_date:
-        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
-        return pd.DataFrame([], columns=_columns)
-
     
     region = 'Quebec'
     sub_region = ''
-    
-    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
     
     url_base = "http://www.fil-information.gouv.qc.ca/Pages/Articles.aspx?lang=en&Page="
     page = 1
@@ -783,21 +703,15 @@ def _load_newfoundland(start_date=datetime(2020, 1, 1), end_date=datetime.today(
 
     Returns: a DataFrame containing news releases from the government of Newfoundland.
     """
-    
-    if start_date > end_date:
-        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
-        return pd.DataFrame([], columns=_columns)
 
     region = 'Newfoundland and Labrador'
     sub_region = ''
-    
-    if verbose: print("\nLoading {} Releases between {} and {}\n".format(region, start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
     
     current_year = datetime.today().year
     
     rows = []
     
-    for year in range(current_year, start_date.year - 1, -1): # Not likely to be relevant in the near future
+    for year in range(current_year, start_date.year - 1, -1): # Searches range backwards
         url = "https://www.gov.nl.ca/releases/r/?ny=" + str(year) + "&nm=&ntype=&ndept="
 
         http = urllib3.PoolManager()
@@ -863,9 +777,15 @@ def _load_province(province, start_date=datetime(2020, 1, 1), end_date=datetime.
             'yukon' : _load_yukon,
            }
 
-    if province not in switcher:
+    if province.lower() not in switcher:
         warn("Province \'{}\' not recognized".format(province))
         return None
+
+    if verbose: print("\nLoading {} Releases between {} and {}\n".format(province.upper(), start_date.strftime('%B %d, %Y'), end_date.strftime('%B %d, %Y')))
+
+    if start_date > end_date:
+        if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
+        return pd.DataFrame([], columns=_columns)
 
     return switcher[province.lower()](start_date=start_date, end_date=end_date, verbose=verbose)
 
@@ -896,11 +816,14 @@ def load_province(province, start_date=None, end_date=datetime.today(), update_c
         province_df = pd.read_csv(_csv_path(province))
         province_df = province_df.drop('Unnamed: 0', axis=1)
         
+        start_length = len(province_df.index)
+
         province_df["start_date"] = pd.to_datetime(province_df["start_date"])
         
         # Get dates later than in the CSV, unless the `start_date` parameter is not None and gives a later date on which to begin searching. If it's None, a default value of Jan 1 2020 is used.
-        largest_date = province_df["start_date"].max()    
-        late_additions = _load_province(province, start_date=max(largest_date, start_date or datetime(2020, 1, 1)), end_date=end_date, verbose=verbose) # Incorrect `end_date` type
+        largest_date = province_df["start_date"].max()
+        new_start = max(largest_date, start_date or datetime(2020, 1, 1))    
+        late_additions = _load_province(province, start_date=new_start, end_date=end_date, verbose=verbose) # Incorrect `end_date` type
         df = late_additions.append(province_df)
 
         # Get dates earlier than in the CSV, unless the `end_date` parameter gives an earlier date on which to stop searching
@@ -913,14 +836,24 @@ def load_province(province, start_date=None, end_date=datetime.today(), update_c
             early_additions = _load_province(province, start_date=start_date, end_date=min(end_date, earliest_date), verbose=verbose)  
             df = df.append(early_additions)
         
-        df = df.drop_duplicates(['source_full_text'])
+        df = df.drop_duplicates(['source_full_text']) # Potentially useful to look into dropping duplicates based on other attributes
+        
     except:
+        start_length = 0
         print("Failed to find CSV at ", _csv_path(province))
         df = _load_province(province, start_date=(start_date or datetime(2020, 1, 1)), end_date=end_date, verbose=verbose)
         
+    end_length = len(df.index)
+
     if update_csv:
+        object_columns = df.dtypes[df.dtypes == 'object'].index.values
+        df[object_columns] = df[object_columns].replace('\n',' ', regex=True)
+        df[object_columns] = df[object_columns].replace('\r',' ', regex=True)
         df.to_csv(_csv_path(province))
     
+    if verbose:
+        print('Articles added: ' + str(end_length - start_length))
+
     return df
 
 def load_provinces(start_date=None, end_date=datetime.today(), update_csv=False, verbose=False):
@@ -938,20 +871,10 @@ def load_provinces(start_date=None, end_date=datetime.today(), update_csv=False,
     Returns: a dictionary mapping the names of provinces and territories to DataFrames containing information about their new releases.
     """
 
-    return {'alberta' : load_province('alberta', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose), 
-            'british columbia' : load_province('british columbia', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose), 
-            'manitoba' : load_province('manitoba', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose), 
-            'new brunswick' : load_province('new brunswick', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose), 
-            'newfoundland' : load_province('newfoundland', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose),
-            'northwest territories' : load_province('northwest territories', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose), 
-            'nova scotia' : load_province('nova scotia', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose), 
-            'nunavut' : load_province('nunavut', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose), 
-            'ontario' : load_province('ontario', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose), 
-            'pei' : load_province('pei', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose), 
-            'quebec' : load_province('quebec', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose), 
-            'saskatchewan' : load_province('saskatchewan', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose), 
-            'yukon' : load_province('yukon', start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose),
-           }
+    provinces = ['alberta', 'british columbia', 'manitoba', 'new brunswick', 'newfoundland', 'northwest territories', 'nova scotia', 'nunavut', 'ontario', 'pei', 'quebec', 'saskatchewan', 'yukon']
+    province_dfs = [load_province(province, start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose) for province in provinces]
+
+    return dict(zip(provinces, province_dfs))
 
 def load_all(start_date=None, end_date=datetime.today(), update_csv=False, verbose=False):
     """
@@ -970,8 +893,6 @@ def load_all(start_date=None, end_date=datetime.today(), update_csv=False, verbo
 
     full_df = pd.DataFrame([], columns=_columns)
     province_dict = load_provinces(start_date=start_date, end_date=end_date, update_csv=update_csv, verbose=verbose)
-
-    for df in province_dict.values():
-        full_df = full_df.append(df)
+    full_df = pd.concat(province_dict.values(), ignore_index=True)
     
     return full_df
