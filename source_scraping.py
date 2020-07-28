@@ -86,7 +86,7 @@ def _load_manitoba(start_date=datetime(2020, 1, 1), end_date=datetime.today(), v
     Returns: a DataFrame containing news releases from the government of Manitoba.
     """
     
-    dates_between = pd.date_range(start=start_date end=end_date, freq="MS")
+    dates_between = pd.date_range(start=start_date, end=end_date, freq="MS")
 
     url_base = 'https://news.gov.mb.ca'
     targets = [url_base + '/news/index.html?month=' + str(date.month) + '&year=' + str(date.year) + '&day=01&bgnG=GO&d=' for date in dates_between]
