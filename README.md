@@ -18,7 +18,7 @@ You can use this direct link to get the data, which is stored in CSV format in t
 
 | Name  | Content | Rows | Size |  Link |
 | --- | --- | --- | --- | --- |
-| `npi_canada.csv` | All Canadian NPIs | 4,140 | 15 MB | [Download](https://raw.githubusercontent.com/jajsmith/COVID19NonPharmaceuticalInterventions/master/npi_canada.csv) |
+| `npi_canada.csv` | All Canadian NPIs | 4,162 | 15 MB | [Download](https://raw.githubusercontent.com/jajsmith/COVID19NonPharmaceuticalInterventions/master/npi_canada.csv) |
 
 Alternatively you can clone this GitHub repository, where the dataset is named `npi_canada.csv`. The repository also contains notebooks for visualizations and demonstrations with the data.
 
@@ -31,7 +31,7 @@ git clone git@github.com:jajsmith/COVID19NonPharmaceuticalInterventions.git
 
 The codebook and additional details can be found at https://docs.google.com/spreadsheets/d/1NSRyeY7XUjwUO8KICJCsOd2YKwuYaSAuM_yEnXMUbOY/edit?usp=sharing
 
-**Time Period:** January 1, 2020 to July 7, 2020.
+**Time Period:** January 1, 2020 to July 21, 2020.
 
 
 ## Methods and Citations
