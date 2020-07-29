@@ -824,7 +824,7 @@ def load_province(province, start_date=None, end_date=datetime.today(), update_c
         # Get dates later than in the CSV, unless the `start_date` parameter is not None and gives a later date on which to begin searching. If it's None, a default value of Jan 1 2020 is used.
         largest_date = province_df["start_date"].max()
         new_start = max(largest_date, start_date or datetime(2020, 1, 1))    
-        late_additions = _load_province(province, start_date=new_start, end_date=end_date, verbose=verbose) # Incorrect `end_date` type
+        late_additions = _load_province(province, start_date=new_start, end_date=end_date, verbose=verbose)
         df = late_additions.append(province_df)
 
         # Get dates earlier than in the CSV, unless the `end_date` parameter gives an earlier date on which to stop searching
@@ -836,22 +836,23 @@ def load_province(province, start_date=None, end_date=datetime.today(), update_c
             earliest_date = province_df["start_date"].min()
             early_additions = _load_province(province, start_date=start_date, end_date=min(end_date, earliest_date), verbose=verbose)  
             df = df.append(early_additions)
-        
-        df = df.drop_duplicates(['source_full_text']) # Potentially useful to look into dropping duplicates based on other attributes
-        
+                
     except:
         start_length = 0
         print("Failed to find CSV at ", _csv_path(province))
         df = _load_province(province, start_date=(start_date or datetime(2020, 1, 1)), end_date=end_date, verbose=verbose)
         
+
+    object_columns = df.dtypes[df.dtypes == 'object'].index.values
+    df[object_columns] = df[object_columns].replace('\n',' ', regex=True)
+    df[object_columns] = df[object_columns].replace('\r',' ', regex=True)
+    
+    if update_csv:
+        df.to_csv(_csv_path(province))
+
+    df = df.drop_duplicates(['source_full_text']) # Potentially useful to look into dropping duplicates based on other attributes
     end_length = len(df.index)
 
-    if update_csv:
-        object_columns = df.dtypes[df.dtypes == 'object'].index.values
-        df[object_columns] = df[object_columns].replace('\n',' ', regex=True)
-        df[object_columns] = df[object_columns].replace('\r',' ', regex=True)
-        df.to_csv(_csv_path(province))
-    
     if verbose:
         print('Articles added: ' + str(end_length - start_length))
 
