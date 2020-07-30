@@ -847,11 +847,11 @@ def load_province(province, start_date=None, end_date=datetime.today(), update_c
     df[object_columns] = df[object_columns].replace('\n',' ', regex=True)
     df[object_columns] = df[object_columns].replace('\r',' ', regex=True)
     
-    if update_csv:
-        df.to_csv(_csv_path(province))
-
     df = df.drop_duplicates(['source_full_text']) # Potentially useful to look into dropping duplicates based on other attributes
     end_length = len(df.index)
+
+    if update_csv:
+        df.to_csv(_csv_path(province))
 
     if verbose:
         print('Articles added: ' + str(end_length - start_length))
