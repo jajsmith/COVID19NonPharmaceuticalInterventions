@@ -90,7 +90,8 @@ def _load_manitoba(start_date=datetime(2020, 1, 1), end_date=datetime.today(), v
     dates_between = pd.date_range(start=month_start, end=end_date, freq="MS")
 
     url_base = 'https://news.gov.mb.ca'
-    targets = [url_base + '/news/index.html?month=' + str(date.month) + '&year=' + str(date.year) + '&day=01&bgnG=GO&d=' for date in dates_between]
+    # reversed to account for the most recent to least recent convention adopted when loading articles
+    targets = reversed([url_base + '/news/index.html?month=' + str(date.month) + '&year=' + str(date.year) + '&day=01&bgnG=GO&d=' for date in dates_between])
 
     region = 'Manitoba'
     subregion = ''
@@ -98,7 +99,7 @@ def _load_manitoba(start_date=datetime(2020, 1, 1), end_date=datetime.today(), v
     rows = []
     for target in targets:
         if verbose: print(target)
-        if target.startswith(url_base): #manitoba
+        if target.startswith(url_base):
             response = requests.get(target)
             soup = BeautifulSoup(response.text, "html.parser")
             items = soup.findAll("div", {"class": "maincontent"})
