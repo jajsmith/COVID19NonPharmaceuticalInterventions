@@ -3,3 +3,6 @@
 __pycache__/
 Testing.ipynb
 SCHEMA UPDATE - Collecting NPIs Effects - FULL.csv
+tb_logs/
+2019_oct_releases.csv
+new_preds.csv
