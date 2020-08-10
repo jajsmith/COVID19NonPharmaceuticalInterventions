@@ -98,7 +98,8 @@ def _load_manitoba(start_date=datetime(2020, 1, 1), end_date=datetime.today(), v
     
     rows = []
     for target in targets:
-        if verbose: print(target)
+        if verbose: 
+            print('Searching link', target)
         if target.startswith(url_base):
             response = requests.get(target)
             soup = BeautifulSoup(response.text, "html.parser")
@@ -221,6 +222,9 @@ def _load_new_brunswick(start_date=datetime(2020, 1, 1), end_date=datetime.today
         article_soup = BeautifulSoup(str(article_div), 'html.parser')
         articles = article_soup.find_all('li')
 
+        if len(articles) == 1: # Only button that says "previous page"
+            return pd.DataFrame(rows, columns=_columns)
+
         for article in articles:
             small_soup = BeautifulSoup(str(article), 'html.parser')
             ar_date_str = small_soup.find('span', class_="post_date")
@@ -279,7 +283,10 @@ def _load_nova_scotia(start_date=datetime(2020, 1, 1), end_date=datetime.today()
         
         titles = soup.find_all('dt', class_="RelTitle")
         summaries = soup.find_all('dd', class_="RelSummary")
-        
+
+        if not (titles or summaries):
+            return pd.DataFrame(rows, columns=_columns)
+
         for title, summary in zip(titles, summaries):
             
             if title['lang'] == "fr": continue
@@ -336,6 +343,9 @@ def _load_northwest_territories(start_date=datetime(2020, 1, 1), end_date=dateti
         
         ar_boxes = soup.find_all('div', class_ = re.compile('views-row')) # regex accounts for inconsistent `div` class names
         
+        if not ar_boxes:
+            return pd.Dataframe(rows, columns=_columns)
+
         for box in ar_boxes:
             boxed_soup = BeautifulSoup(str(box), 'html.parser') # parse each div
             date_str = boxed_soup.find('span').text
@@ -393,6 +403,9 @@ def _load_saskatchewan(start_date=datetime(2020, 1, 1), end_date=datetime.today(
         article_list = soup.find('ul', class_="results")
         article_soup = BeautifulSoup(str(article_list), 'html.parser')
         list_items = article_soup.find_all('li')
+
+        if not list_items:
+            return pd.DataFrame(rows, columns=_columns)        
         
         for item in list_items:
             
@@ -451,6 +464,9 @@ def _load_nunavut(start_date=datetime(2020, 1, 1), end_date=datetime.today(), ve
         main_section_soup = BeautifulSoup(str(main_section), 'html.parser')
         
         divs = main_section_soup.find_all('div', re.compile('views-row(.*)'))
+
+        if not divs:
+            return pd.DataFrame(rows, columns=_columns)        
         
         for div in divs:
             
@@ -506,6 +522,10 @@ def _load_yukon(start_date=datetime(2020, 1, 1), end_date=datetime.today(), verb
         soup = BeautifulSoup(response.content, 'html.parser')
         
         main_div = soup.find('div', class_ = "view-content")
+
+        if not main_div:
+            return pd.DataFrame(rows, columns=_columns)
+
         main_div_soup = BeautifulSoup(str(main_div), 'html.parser')
         
         divs = main_div_soup.find_all('div', re.compile('views-row(.*)'))
@@ -563,7 +583,10 @@ def _load_pei(start_date=datetime(2020, 1, 1), end_date=datetime.today(), verbos
         soup = BeautifulSoup(response.content, 'html.parser')
         
         divs = soup.find_all('div', class_="right content views-fieldset")
-        
+
+        if not divs:
+            return pd.DataFrame(rows, columns=_columns)        
+
         for div in divs:
                         
             div_soup = BeautifulSoup(str(div), 'html.parser')
@@ -690,7 +713,11 @@ def _load_quebec(start_date=datetime(2020, 1, 1), end_date=datetime.today(), ver
 
                 row = [ar_date, _country, region, sub_region, link, _src_cat, title, body]
                 rows.append(row)
-            
+        
+        if not soup.find('li', class_='last'): # No 'go to last page' indicates that this is the last page
+            if verbose: print("Stopping search at date {}".format(ar_date))
+            return pd.DataFrame(rows, columns=_columns)
+
         page += 1
 
 def _load_newfoundland(start_date=datetime(2020, 1, 1), end_date=datetime.today(), verbose=True):
@@ -789,7 +816,12 @@ def _load_province(province, start_date=datetime(2020, 1, 1), end_date=datetime.
         if verbose: print("Cannot search between {} and {}".format(start_date, end_date))
         return pd.DataFrame([], columns=_columns)
 
-    return switcher[province.lower()](start_date=start_date, end_date=end_date, verbose=verbose)
+    try:
+        df = switcher[province.lower()](start_date=start_date, end_date=end_date, verbose=verbose)
+    except:
+        df = pd.DataFrame([], columns=_columns)
+        print("Could not load new articles for province", province)
+    return df
 
 def _csv_path(province):
     """
@@ -817,7 +849,7 @@ def load_province(province, start_date=None, end_date=datetime.today(), update_c
     try:
         province_df = pd.read_csv(_csv_path(province))
         province_df = province_df.drop('Unnamed: 0', axis=1)
-        
+
         start_length = len(province_df.index)
 
         province_df["start_date"] = pd.to_datetime(province_df["start_date"])
@@ -840,7 +872,7 @@ def load_province(province, start_date=None, end_date=datetime.today(), update_c
                 
     except:
         start_length = 0
-        print("Failed to find CSV at ", _csv_path(province))
+        print("Could not read file with path", _csv_path(province))
         df = _load_province(province, start_date=(start_date or datetime(2020, 1, 1)), end_date=end_date, verbose=verbose)
         
 
