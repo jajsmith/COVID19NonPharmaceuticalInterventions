@@ -1,0 +1,7 @@
+- name: run-notebook
+  uses: yaananth/run-notebook@v1
+
+on:
+  schedule:
+  - cron: '0 * * * *'
+
