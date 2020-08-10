@@ -312,7 +312,7 @@ def visualize_model(model, corpus, id2word):
     Returns: a pyLDAvis visualization
     """
     pyLDAvis.enable_notebook()
-    return pyLDAvis.gensim.prepare(model, corpus, id2word)
+    return pyLDAvis.gensim.prepare(model, corpus, id2word, mds='mmds')
 
 # Pipeline for creation of an LDA model
 
