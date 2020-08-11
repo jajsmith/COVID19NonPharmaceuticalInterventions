@@ -848,7 +848,8 @@ def load_province(province, start_date=None, end_date=datetime.today(), update_c
 
     try:
         province_df = pd.read_csv(_csv_path(province))
-        province_df = province_df.drop('Unnamed: 0', axis=1)
+        errant_columns = [col for col in province_df.columns if col not in _columns]
+        province_df = province_df.drop(errant_columns, axis=1)
 
         start_length = len(province_df.index)
 
