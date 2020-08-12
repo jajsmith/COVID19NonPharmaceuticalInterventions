@@ -211,7 +211,7 @@ def find_best_model_log_perp(n_topic_range, texts, id2word, corpus, threshold=No
 
     if threshold is not None and p < threshold:
         if verbose: 
-            print('Returning early with a log perplexity value of ' + str(coherence))
+            print('Returning early with a log perplexity value of ' + str(p))
 
         if plot:
             actual_range = range(n_topic_range.start, n_topics + n_topic_range.step, n_topic_range.step)
