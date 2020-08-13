@@ -18,7 +18,7 @@ import re
 
 # Lemmatization
 import spacy
-import fr_core_news_sm
+# import fr_core_news_sm
 
 # Printing model topics
 from pprint import pprint
@@ -39,6 +39,7 @@ from datetime import datetime
 # Utils
 import numpy as np
 import pandas as pd
+from warnings import warn
 
 # Preprocessing
 
@@ -100,8 +101,11 @@ def lemmatize(texts, allowed_postags=['NOUN', 'ADJ', 'VERB'], lang='english'):
     Returns: a list of documents with words replaced by their lemmas and removed if they do not constitute a part of speech indicated in `allowed_postags`
     """
     
-    # French for Quebec
-    nlp = spacy.load('en', disable=['parser', 'ner']) if lang == 'english' else fr_core_news_sm.load(disable=['parser', 'ner'])
+    if lang != 'english':
+        warn('Support only currently exists for English language processing')
+        return None
+
+    nlp = spacy.load('en_core_web_sm', disable=['parser', 'ner']) # if lang == 'english' else fr_core_news_sm.load(disable=['parser', 'ner'])
     return [[token.lemma_ for token in nlp(" ".join(doc)) if token.pos_ in allowed_postags] for doc in texts]
 
 def make_bigrams(texts, min_count=5, threshold=100):
