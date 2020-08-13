@@ -4,7 +4,7 @@ name: Automatic Updates
 # events but only for the master branch
 on:
   schedule:
-    - cron: '* */2 * * *'
+    - cron: '0 */2 * * *'
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -28,10 +28,7 @@ jobs:
         pip install -r requirements.txt
         python -m nltk.downloader stopwords
         python -m spacy download en_core_web_sm
-#      - name: setup python
-#        uses: actions/setup-python@v2
-#        with:
-#          python-version: 3.8.5 #install the python needed
+
      - name: execute script.py # run the run.py to get the latest data
        run: |
          python script.py
@@ -41,6 +38,5 @@ jobs:
        with:
         # Commit message
         commit_message: "Automatically updated"
-        # branch: newbranch
         # Git branch name, where changes should be pushed too. Required if Action is used on the `pull_request` event
         branch: autoclassification
