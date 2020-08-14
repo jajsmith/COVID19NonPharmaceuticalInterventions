@@ -31,7 +31,7 @@ jobs:
 
      - name: execute script.py # run the run.py to get the latest data
        run: |
-         python script.py
+         python run-classifier.py
          
      - name: Git Auto Commit
        uses: stefanzweifel/git-auto-commit-action@v4.4.0
