@@ -16,8 +16,8 @@ jobs:
     steps:
      - name: checkout repo content      
        uses: actions/checkout@v2 # checkout the repository content to github runner.
-       with:
-         ref: autoclassification
+      #  with:
+      #    ref: autoclassification
      - name: Set up Python
        uses: actions/setup-python@v2
        with:
@@ -39,4 +39,4 @@ jobs:
         # Commit message
         commit_message: "Automatically updated"
         # Git branch name, where changes should be pushed too. Required if Action is used on the `pull_request` event
-        branch: autoclassification
+        # branch: autoclassification
