@@ -1,0 +1,42 @@
+name: Automatic Updates
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  schedule:
+    - cron: '0 */2 * * *'
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+     - name: checkout repo content      
+       uses: actions/checkout@v2 # checkout the repository content to github runner.
+      #  with:
+      #    ref: autoclassification
+     - name: Set up Python
+       uses: actions/setup-python@v2
+       with:
+         python-version: '3.x'
+     - name: Install dependencies
+       run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        python -m nltk.downloader stopwords
+        python -m spacy download en_core_web_sm
+
+     - name: execute python script # run the .py file to get the latest data
+       run: |
+         python run-classifier.py
+         
+     - name: Git Auto Commit
+       uses: stefanzweifel/git-auto-commit-action@v4.4.0
+       with:
+        # Commit message
+        commit_message: "Automatically updated"
+        # Git branch name, where changes should be pushed too. Required if Action is used on the `pull_request` event
+        # branch: autoclassification

@@ -1,0 +1,1 @@
+requests bs4 tensorflow pandas feedparser gensim nltk spacy pprint pyLDAvis sklearn xgboost matplotlib joblib
