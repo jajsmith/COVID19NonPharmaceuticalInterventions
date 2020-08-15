@@ -6,7 +6,6 @@ feedparser
 gensim
 nltk
 spacy
-pprint == 0.1
 pyLDAvis
 sklearn
 xgboost
